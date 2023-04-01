@@ -1,19 +1,33 @@
-# Laboratorio 1: Instalación de una máquina virtual en Linux y exploración de la GUI
+# Laboratorio 1: Instalación de una máquina virtual en Linux y exploración de la GUI <!-- omit in toc -->
 
-## Parte 1: Preparar una computadora para la virtualización
+- [Parte 1. Preparar una computadora para la virtualización](#parte-1-preparar-una-computadora-para-la-virtualización)
+  - [Paso 1. Descargar e instalar VirtualBox](#paso-1-descargar-e-instalar-virtualbox)
+  - [Paso 2. Descargar una imagen de Linux](#paso-2-descargar-una-imagen-de-linux)
+  - [Paso 3. Crear una máquina virtual nueva](#paso-3-crear-una-máquina-virtual-nueva)
+- [Parte 2. Instalar Ubuntu en la máquina virtual](#parte-2-instalar-ubuntu-en-la-máquina-virtual)
+  - [Paso 1. Monte la imagen](#paso-1-monte-la-imagen)
+  - [Paso 2. Instale el sistema operativo](#paso-2-instale-el-sistema-operativo)
+  - [Problemas](#problemas)
+- [Parte 3. Explora la interfaz gráfica de usuario](#parte-3-explora-la-interfaz-gráfica-de-usuario)
+  - [Paso 1. Instalar Guest Additions](#paso-1-instalar-guest-additions)
+  - [Paso 2. Abrir un navegador web](#paso-2-abrir-un-navegador-web)
+- [Pregunta de reflexión](#pregunta-de-reflexión)
 
-### Paso 1: Descargar e instalar VirtualBox
+
+## Parte 1. Preparar una computadora para la virtualización
+
+### Paso 1. Descargar e instalar VirtualBox
 
 ![](sources/2023-03-31-09-30-15.png)
 
-### Paso 2: Descargar una imagen de Linux
+### Paso 2. Descargar una imagen de Linux
 
 Usamos la última versión LTS* de Ubuntu actualmente: Ubuntu 22.04.1 
 ![](sources/2023-03-31-21-04-33.png)
 
 *LTS: Long-term support (soporte a largo plazo)
 
-### Paso 3: Crear una máquina virtual nueva
+### Paso 3. Crear una máquina virtual nueva
 
 Creamos una VM en el disco D con las siguientes características:
 - Ubuntu (64-bits)
@@ -103,7 +117,7 @@ En la siguiente imagen se muestra el navegador web FireFox y el terminal, que ya
 
 ## Pregunta de reflexión 
 
-> ¿Cuáles son las ventajas y desventajas de usar una máquina virtual?
+>**¿Cuáles son las ventajas y desventajas de usar una máquina virtual?**
 
 Usar una VM tiene las siguientes ventajas:
 - Facilita la instalación de un sistema operativo distinto al que tiene el _host_.
