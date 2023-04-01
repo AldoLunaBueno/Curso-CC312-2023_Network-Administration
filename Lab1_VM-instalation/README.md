@@ -38,7 +38,7 @@ Ya la tenemos, pero le falta el sistema operativo. Esto es lo que sucede si inte
 
 ![](sources/2023-03-31-11-08-46.png)
 
-## Parte 2. Instalar Ubuntu en la máquina mirtual
+## Parte 2. Instalar Ubuntu en la máquina virtual
 
 ### Paso 1. Monte la imagen
 
