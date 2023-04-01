@@ -103,7 +103,7 @@ En la siguiente imagen se muestra el navegador web FireFox y el terminal, que ya
 
 ## Pregunta de reflexión 
 
-¿Cuáles son las ventajas y desventajas de usar una máquina virtual?
+> ¿Cuáles son las ventajas y desventajas de usar una máquina virtual?
 
 Usar una VM tiene las siguientes ventajas:
 - Facilita la instalación de un sistema operativo distinto al que tiene el _host_.
