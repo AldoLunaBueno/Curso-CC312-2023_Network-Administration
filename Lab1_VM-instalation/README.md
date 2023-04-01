@@ -1,4 +1,4 @@
-# Laboratory 1. Virtual Machine instalation
+# Laboratorio 1: Instalación de una máquina virtual en Linux y exploración de la GUI
 
 ## Parte 1: Preparar una computadora para la virtualización
 
@@ -120,4 +120,4 @@ Hace 20 años la virtualización no existía. La única forma en la que una empr
 
 La virtualización hace posible resolverlo todo. En un solo servidor puedes tener varias máquinas virtuales ofreciendo un servicio distinto cada una, y todas ellas conectadas a través de una infraestructura de red completamente virtualizada dentro del mismo servidor. La computación en la nube (cloud computing) se basa en esto para ofrecer a través de Internet los servicios virtualizados en enormes granjas de servidores. Esto es llamado SaaS (Software as a Service). Pero también se puede ofrecer el poder de cómputo de las máquinas virtuales: PaaS (Platform as a Service). Incluso se puede ofrecer la propia infraestructura virtualizada: IaaS (Infraestructure as a Service).
 
-La virtualización ofrece todo un mundo fascinante de posibilidades que solo estamos comenzando a explorar.
+La virtualización ofrece todo un mundo posibilidades fascinantes que solo estamos comenzando a explorar.
