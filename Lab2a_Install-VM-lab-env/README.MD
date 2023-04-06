@@ -11,6 +11,7 @@
   - [Paso 3. Crear una cuenta de Webex](#paso-3-crear-una-cuenta-de-webex)
   - [Paso 4. Apague la VM](#paso-4-apague-la-vm)
 - [Parte 4. Instalar la aplicación de Webex en su dispositivo.](#parte-4-instalar-la-aplicación-de-webex-en-su-dispositivo)
+- [Conclusiones](#conclusiones)
 
 
 ## Parte 1. Preparar una computadora para la virtualización.
@@ -52,7 +53,7 @@ Tomar una _snapshot_ de una VM es guarda el estado actual de la VM para poder vo
 
 ### Paso 1. Crear cuenta DevNet
 
-[developer.cisco.com](https://developer.cisco.com) > Registrarse gratis (sign up free)
+[Cisco Developer](https://developer.cisco.com) > Registrarse gratis (sign up free)
 ![](sources/2023-04-05-19-00-33.png)
 
 ![](sources/2023-04-05-19-07-14.png)
@@ -93,3 +94,7 @@ Iniciamos la instalación aceptando la parte legal. Vemos que estamos instalando
 Ya iniciamos sesión con las credenciales creadas en el paso 3 de la parte 3.
 
 ![](sources/2023-04-05-21-49-07.png)
+
+## Conclusiones
+
+Hemos instalado la VM DEVASC (desarrollo de aplicaciones y automatización de flujos de trabajo utilizando las plataformas básicas de Cisco). En esta VM encontramos varias herramientas importantes ya instaladas: Chromium, VS Code, Packet Tracer y Postman. Luego creamos algunas cuentas necesarias para los laboratorios que vienen: Cisco Developer (DevNet), Webex y GitHub. También instalamos la aplicación de escritorio de Webex. Usaremos esto para comunicarnos en un eventual _workshop_.
