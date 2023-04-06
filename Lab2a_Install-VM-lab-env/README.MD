@@ -1,4 +1,4 @@
-# Laboratorio 2: Instalar el entorno de laboratorio de máquinas virtuales <!-- omit in toc -->
+# Laboratorio 2a: Instalar el entorno de laboratorio de máquinas virtuales <!-- omit in toc -->
 
 - [Parte 1. Preparar una computadora para la virtualización.](#parte-1-preparar-una-computadora-para-la-virtualización)
   - [Paso 1.](#paso-1)
