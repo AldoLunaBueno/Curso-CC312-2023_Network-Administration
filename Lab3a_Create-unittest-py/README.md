@@ -90,7 +90,7 @@ Las pruebas unitarias no solo sirven para detectar y corregir errores en el cód
 
 Por estas razones, las pruebas unitarias son una práctica esencial para cualquier programador que quiera crear software de calidad y confianza.
 
-**Pero ¿cómo ayudan a mejorar la legibilidad del código?**
+**¿Y cómo ayudan a mejorar la legibilidad del código?**
 
 Las pruebas unitarias ayudan a que el código sea más legible de tres formas:
 

@@ -6,5 +6,6 @@
 
 [Laboratory 2b: Explore Python Development Tools](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab2b_Python_dev_tools)
 
-[Laboratory 3a: Create a Python Unit Test Answers](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab3a_Create-unittest-py)
+[Laboratory 3a: Create a Python Unit Test](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab3a_Create-unittest-py)
 
+[Laboratory 3b: Parse Different Data Types with Python](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab3b_Parse-data-py)
