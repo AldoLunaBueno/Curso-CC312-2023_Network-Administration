@@ -9,7 +9,7 @@
     - [Paso 5. Investiga y corrige el primer error en el script recursive\_json\_search.py](#paso-5-investiga-y-corrige-el-primer-error-en-el-script-recursive_json_searchpy)
     - [Paso 6. Vuelve a ejecutar la prueba para comprobar si se han corregido todos los errores del script](#paso-6-vuelve-a-ejecutar-la-prueba-para-comprobar-si-se-han-corregido-todos-los-errores-del-script)
     - [Paso 7. Investiga y corrige el segundo error en el script recursive\_json\_search.py](#paso-7-investiga-y-corrige-el-segundo-error-en-el-script-recursive_json_searchpy)
-  - [Conclusiones](#conclusiones)
+  - [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
 > Para este laboratorio seguimos [esta guía en inglés.](https://www.ccna6rs.com/3-5-7-lab-create-a-python-unit-test-answers/)
 
@@ -28,6 +28,8 @@ Creamos la función recursiva `json_search()`, con la que queremos capturar todo
 ### Paso 3. Crea algunas pruebas unitarias que comprueben si la función funciona según lo previsto
 
 Tenemos que asegurarnos de tres cosas: que la función retorne una lista no vacía cuando la clave dada existe en el diccionario, que la función retorne una lista vacía cuando no, y que lo que retorna la función siempre sea una lista.
+
+Esto lo hacemos definiendo la clase de prueba `json_search_test`, que hereda de la clase `unittest.TestCase`:
 
 ![](sources/2023-04-13-08-42-10.png)
 
@@ -59,10 +61,24 @@ Tanto el primer error como el que introdujimos luego se pueden resolver cambiand
 
 ![](sources/2023-04-13-10-20-16.png)
 
-A propósito, hice el intento de renombrar la `función json_search()` como `inner_function()` para ahorrarme tener que reescribir manualmente las llamadas recursivas, pero se renombró también en el archivo de las pruebas unitarias. Es un comportamiento de VSCode que desconocía y que, obviamente, no era deseado en este caso.
+Como ya pasaron todas las pruebas, podemos eliminar el `print` del final.
+
+A propósito, hicimos el intento de renombrar la función `json_search()` como `inner_function()` para ahorrarnos tener que reescribir manualmente las llamadas recursivas, pero se renombró también en el archivo de las pruebas unitarias. Este es un comportamiento de VSCode que desconocíamos y que, obviamente, no era deseable en este caso.
 
 ![](sources/2023-04-13-09-37-05.png)
 
-## Conclusiones
+## Conclusiones y reflexiones
 
+**¿Por qué las pruebas unitarias son importantes?**
 
+Las pruebas unitarias no solo sirven para detectar y corregir errores en el código, sino también para mejorar su calidad, legibilidad y mantenibilidad. Al escribir pruebas unitarias, nos obligamos a pensar en el diseño y la estructura de nuestro código, así como en los casos de uso y las condiciones límite. Además, las pruebas unitarias facilitan la refactorización y la integración continua del código, lo que agiliza el desarrollo y la entrega del software. Por estas razones, las pruebas unitarias son una práctica esencial para cualquier programador que quiera crear software de calidad y confianza.
+
+**Pero ¿cómo ayudan a mejorar la legibilidad del código?**
+
+Las pruebas unitarias ayudan a que el código sea más legible de tres formas:
+
+- Obligan a los desarrolladores a escribir código modular y desacoplado, lo que facilita su comprensión y mantenimiento.
+
+- Documentan el comportamiento esperado de cada unidad de código, lo que ayuda a los desarrolladores a entender su propósito y su lógica.
+
+- Permiten refactorizar el código con confianza, lo que ayuda a eliminar el código redundante o innecesario y a mejorar su claridad y coherencia.
