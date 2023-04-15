@@ -12,6 +12,7 @@
   - [Paso 1. Crea un script para analizar los datos YAML](#paso-1-crea-un-script-para-analizar-los-datos-yaml)
   - [Paso 2. Ejecuta el script para imprimir los datos YAML y luego modifícalo para imprimir los datos de interés](#paso-2-ejecuta-el-script-para-imprimir-los-datos-yaml-y-luego-modifícalo-para-imprimir-los-datos-de-interés)
   - [Paso 3. Imprime los datos YAML analizados en formato JSON](#paso-3-imprime-los-datos-yaml-analizados-en-formato-json)
+- [Extra](#extra)
 - [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 - [Bibliografía](#bibliografía)
 
@@ -91,6 +92,18 @@ El archivo está estructurado en pares clave-valor:
 
 ![](sources/2023-04-13-19-23-24.png)
 
+## Extra
+
+En la [parte 2](#parte-2-analiza-xml-en-python) dejamos ver que analizar un archivo XML incluyendo el namespace tal cual cada vez que buscamos un elemento nos parece incómodo. Por eso planteamos aquí una técnica un poco más elaborada que simplifica muchas cosas:
+
+![](sources/2023-04-14-22-44-26.png)
+
+Nos hemos aprovechado de que el método `find()` puede recibir como segundo parámetro un diccionario de valores URI renombrados con claves más sencillas. Lo normal hubiera sido asociar a nuestra URI un nombre como _cisco_standard_, sin embargo lo simplificamos al extremo con una cadena vacía. De esta forma, ya no tenemos que añadir nada antes del tag.
+
+Otra cosa que podemos hacer es olvidarnos del elemento mediador `edit-config` para buscar directamente los elementos `default-operation` y `test-option` desde la raíz. Es decir, nos vamos a saltar la jerarquía. Para ello anteponemos la cadena ".//" a los tags de ambos elementos.
+
+![](sources/2023-04-14-22-58-39.png)
+
 ## Conclusiones y reflexiones
 
 **¿Cómo son los distintos formatos vistos en el laboratorio?**
@@ -132,6 +145,8 @@ XML se utiliza para el intercambio de datos (es decir, cuando un usuario quiere 
 - [YAML vs JSON vs XML | What is the Difference Between Them?](https://www.csestack.org/yaml-vs-json-vs-xml-difference/)
 
 - [What's the Difference Between JSON, XML, and YAML?](https://www.electronicdesign.com/technologies/dev-tools/article/21800743/whats-the-difference-between-json-xml-and-yaml)
+
+- [Parsing XML with Namespaces](https://docs.python.org/3/library/xml.etree.elementtree.html#parsing-xml-with-namespaces)
 
 - [Introducción a YAML para principiantes](https://geekflare.com/es/yaml-introduction/)
 
