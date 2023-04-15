@@ -95,25 +95,25 @@ El archivo está estructurado en pares clave-valor:
 
 **¿Cómo son los distintos formatos vistos en el laboratorio?**
 
-- XML, JSON y YAML son formatos de serialización de datos que permiten transmitir y compartir información más compleja entre sistemas diferentes, con estructuras jerárquicas y atributos variables.
+XML, JSON y YAML son formatos de serialización de datos que permiten transmitir y compartir información más compleja entre sistemas diferentes, con estructuras jerárquicas y atributos variables.
   
 - XML es un lenguaje de marcado extensible que define un conjunto de reglas para codificar información de manera que sea legible por un ser humano y por un ordenador. Se usa ampliamente para transmitir información en servicios webs y APIs REST y para archivos de configuración. Una de sus fortalezas es el soporte a Unicode, lo que permite escribir la información en cualquier idioma del mundo.
   
-- JSON es un estándar abierto que utiliza texto plano para codificar información en la forma atributo: valor. Aunque en sus inicios fue considerado como una parte de JavaScript, siempre ha sido independiente del lenguaje de programación y se encuentra disponible para los más populares. También es ampliamente usado para intercambio de información entre servicios web y APIs REST. Una de sus ventajas es que es compacto y una cadena JSON promedio tiene aproximadamente dos tercios del tamaño de los mismos datos en XML.
+- JSON es un estándar abierto que utiliza texto plano para codificar información en la forma clave-valor. Aunque en sus inicios fue considerado como una parte de JavaScript, siempre ha sido independiente del lenguaje de programación y se encuentra disponible para los más populares. También es ampliamente usado para intercambio de información entre servicios web y APIs REST. Una de sus ventajas es que es compacto y una cadena JSON promedio tiene aproximadamente dos tercios del tamaño de los mismos datos en XML.
   
 - YAML es un formato de serialización de datos que significa YAML no es lenguaje de marcado. La principal ventaja de usar YAML es la legibilidad y la capacidad de escritura. Si se tiene un archivo de configuración que debe ser más fácil de leer para los humanos, es mejor usar YAML. YAML también admite varios tipos de datos como casos, matrices, diccionarios, listas y escalares. YAML solo admite espacios, y distingue entre mayúsculas y minúsculas y espacio. Las pestañas no se aceptan universalmente.
 
 **¿Qué tienen en común y en qué se diferencian?**
 
-- XML es un lenguaje de marcado, mientras que JSON y YAML son formatos de datos. XML usa etiquetas para definir los elementos y almacena los datos en una estructura de árbol, mientras que los datos en JSON se almacenan como un mapa con pares clave-valor. YAML, por otro lado, permite la representación de datos tanto en formato de lista o secuencia como en forma de mapa con pares clave-valor.
+XML es un lenguaje de marcado, mientras que JSON y YAML son formatos de datos. XML usa etiquetas para definir los elementos y almacena los datos en una estructura de árbol, mientras que los datos en JSON se almacenan como un mapa con pares clave-valor. YAML, por otro lado, permite la representación de datos tanto en formato de lista o secuencia como en forma de mapa con pares clave-valor.
   
-- XML admite tipos de datos complejos como gráficos, imágenes y otros tipos de datos no primitivos. JSON solo admite cadenas, números, matrices, booleanos y objetos. YAML, por otro lado, admite tipos de datos complejos como sellos de fecha y hora, secuencias, valores anidados y recursivos y tipos de datos primitivos.
+XML admite tipos de datos complejos como gráficos, imágenes y otros tipos de datos no primitivos. JSON solo admite cadenas, números, matrices, booleanos y objetos. YAML, por otro lado, admite tipos de datos complejos como sellos de fecha y hora, secuencias, valores anidados y recursivos y tipos de datos primitivos.
   
-- XML es voluminoso y lento en el análisis sintáctico, lo que conduce a una transmisión de datos relativamente lenta. Los archivos JSON son considerablemente más pequeños que los archivos XML y los datos JSON se analizan rápidamente por el motor JavaScript, lo que permite una transmisión de datos más rápida. YAML, como un superconjunto de JSON, también ofrece una transmisión de datos más rápida, pero es importante recordar que JSON y YAML se utilizan en diferentes escenarios.
+XML es voluminoso y lento en el análisis sintáctico, lo que conduce a una transmisión de datos relativamente lenta. Los archivos JSON son considerablemente más pequeños que los archivos XML y los datos JSON se analizan rápidamente por el motor JavaScript, lo que permite una transmisión de datos más rápida. YAML, como un superconjunto de JSON, también ofrece una transmisión de datos más rápida, pero es importante recordar que JSON y YAML se utilizan en diferentes escenarios.
   
-- XML es difícil de leer e interpretar, pero es bastante fácil interpretar los datos en formato JSON y es mucho más fácil leer los datos en YAML que en formato JSON.
+XML es difícil de leer e interpretar, pero es bastante fácil interpretar los datos en formato JSON y es mucho más fácil leer los datos en YAML que en formato JSON.
   
-- XML se utiliza para el intercambio de datos (es decir, cuando un usuario quiere intercambiar datos entre dos aplicaciones). JSON es mejor como formato de serialización y se utiliza para servir datos a interfaces de programación de aplicaciones (API). YAML es más adecuado para la configuración.
+XML se utiliza para el intercambio de datos (es decir, cuando un usuario quiere intercambiar datos entre dos aplicaciones). JSON es mejor como formato de serialización y se utiliza para servir datos a interfaces de programación de aplicaciones (API). YAML es más adecuado para la configuración.
 
 **¿Cómo es el análisis de los datos en estos formatos?**
 
@@ -126,6 +126,12 @@ El archivo está estructurado en pares clave-valor:
 ## Bibliografía
 
 - [XML JSON YAML: Formatos para intercambiar información](https://hipertextual.com/2014/05/xml-json-yaml)
+
+- [XML vs. JSON vs. YAML](https://community.cisco.com/t5/developer-general-knowledge-base/xml-vs-json-vs-yaml/ta-p/4729758)
+
+- [YAML vs JSON vs XML | What is the Difference Between Them?](https://www.csestack.org/yaml-vs-json-vs-xml-difference/)
+
+- [What's the Difference Between JSON, XML, and YAML?](https://www.electronicdesign.com/technologies/dev-tools/article/21800743/whats-the-difference-between-json-xml-and-yaml)
 
 - [Introducción a YAML para principiantes](https://geekflare.com/es/yaml-introduction/)
 
