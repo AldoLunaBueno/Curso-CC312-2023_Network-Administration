@@ -31,6 +31,7 @@
   - [Paso 6. Revisa la función de añadir libro (AddBook)](#paso-6-revisa-la-función-de-añadir-libro-addbook)
   - [Paso 7. Revisa el código que invoca las dos funciones](#paso-7-revisa-el-código-que-invoca-las-dos-funciones)
   - [Paso 8. Ejecuta y verifica el programa add100RandomBooks.py](#paso-8-ejecuta-y-verifica-el-programa-add100randombookspy)
+- [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
 
 Para este laboratorio seguimos [esta guía en inglés](https://www.ccna6rs.com/4-5-5-lab-explore-rest-apis-with-api-simulator-and-postman-answers/).
@@ -289,3 +290,11 @@ Tratamos de verificar esto haciendo una petición GET a través de Postman, pero
 Para ver los 106 libros que ahora hay podemos ir a la página principal. Primero se cargan unos 50 libros y los demás se cargan luego de siete segundos al bajar el deslizador.
 
 ![](sources/2023-04-21-00-02-44.png)
+
+## Conclusiones y reflexiones
+
+Este laboratorio trató sobre hacer peticiones a una API REST. Todo se basó en un simulador de API llamado School Library API, que es un sitio web almacenado localmente. Primero aprendimos a través de la interfaz web de este simulador cómo son las peticiones GET, POST, y DELETE. La de POST fue la más interesante, porque vimos que antes de añadir datos primero hay que conseguir un token de autenticación mediante unas credenciales dadas en el laboratorio. Luego vimos cómo hacer lo mismo a través de Postman, un software que nos permite manejar las peticiones no solo a este simulador de API, sino a cualquier API. Por último, vimos una forma de hacer no una, sino muchas peticiones de forma procedural con un script de Python, mi parte favorita. En conclusión, hemos aprendido a hacer peticiones a una API de diferentes formas y desde distintas herramientas, lo cual es muy útil y divertido.
+
+Las posibilidades que se abren a partir de esta experiencia son enormes. Con las API puedes acceder a datos e información de todo tipo, desde el clima hasta las noticias, pasando por las redes sociales y los servicios de streaming. Puedes crear aplicaciones que integren varias API y ofrezcan soluciones innovadoras y personalizadas. Puedes automatizar procesos y tareas que antes requerían mucho tiempo y esfuerzo. Puedes aprender de los datos y extraer conocimiento e insights valiosos. Puedes comunicarte con otros desarrolladores y usuarios y compartir tus proyectos y feedback. En definitiva, puedes hacer maravillas con las API.
+
+Por eso, estamos decididos a seguir explorando y aprendiendo sobre las nuevas tecnologías y tendencias relacionadas con las API, como el GraphQL, el OpenAPI, el WebSockets, el gRPC, el Serverless y mucho más.
