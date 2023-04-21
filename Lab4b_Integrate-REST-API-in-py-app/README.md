@@ -23,10 +23,10 @@
   - [Paso 5. Actividad - Prueba la iteración JSON](#paso-5-actividad---prueba-la-iteración-json)
   - [Paso 6. Comprueba si hay una entrada del usuario no válida](#paso-6-comprueba-si-hay-una-entrada-del-usuario-no-válida)
 - [Parte 6. Prueba la funcionalidad completa de la aplicación](#parte-6-prueba-la-funcionalidad-completa-de-la-aplicación)
-- [Conclusiones y.reflexiones](#conclusiones-yreflexiones)
-
+- [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
 Para este laboratorio seguimos [esta guía en inglés](https://itexamanswers.net/4-9-2-lab-integrate-a-rest-api-in-a-python-application-answers.html).
+
 ## Parte 1. Lanza la VM de DEVASC
 
 
@@ -37,7 +37,13 @@ Para este laboratorio seguimos [esta guía en inglés](https://itexamanswers.net
 
 ## Parte 3. Obtén una clave de API de MapQuest
 
+![](sources/2023-04-21-10-58-23.png)
 
+![](sources/2023-04-21-11-03-55.png)
+
+No encontramos la opción _Approve All Keys_, pero vemos que ya tenemos una llave.
+
+![](sources/2023-04-21-11-06-14.png)
 
 ## Parte 4. Construye la aplicación básica de direcciones de MapQuest
 
@@ -45,19 +51,47 @@ Para este laboratorio seguimos [esta guía en inglés](https://itexamanswers.net
 
 ### Paso 1. Crea un nuevo archivo en VS Code
 
+En este punto, aparte de crear nuestro primero script _mapquest_parse-json_1.py_, aprovechamos para guardar la clave API de consumidor.
 
+![](sources/2023-04-21-11-14-26.png)
 
 ### Paso 2. Importa los módulos para la aplicación
 
-
+![](sources/2023-04-21-11-19-04.png)
 
 ### Paso 3. Construye la URL para la solicitud a la API de direcciones de MapQuest
 
+Empezamos definiendo las siguientes variables:
 
+![](sources/2023-04-21-12-01-53.png)
+
+Añadimos la línea para la URL y por curiosidad imprimimos la cadena `url`. Este fue el resultado:
+
+![](sources/2023-04-21-11-50-25.png)
+
+Esta URL ya se puede utilizar directamente en el navegador:
+
+![](sources/2023-04-21-11-53-52.png)
+
+Volviendo a las instrucciones del laboratorio, introducimos el código para hacer la petición a la URL obtenida y analizarla en formato JSON:
+
+![](sources/2023-04-21-12-00-31.png)
 
 ### Paso 4. Prueba la solicitud de URL
 
+ Este es el resultado de la ejecución:
 
+![](sources/2023-04-21-11-58-34.png)
+
+Lamentablemente no se aprecian bien los datos. Por eso recurrimos a la biblioteca `json`, la cual aprendimos a usar en el [Laboratorio 3b](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab3b_Parse-data-py). Como _json_data_ ya es un objeto JSON, lo podemos introducir directamente como primer parámetro en el método `json.dumps()`. Ejecutamos y obtenemos unos datos bien formateados:
+
+![](sources/2023-04-21-12-29-37.png)
+
+Ahora sí podemos buscar dónde está la clave _info_:
+
+![](sources/2023-04-21-12-34-37.png)
+
+La clave _statuscode_ se usará más adelante.
 
 ### Paso 5. Imprime la URL y verifica el estado de la solicitud JSON
 
@@ -119,7 +153,7 @@ Queremos que incluya duración, distancia y combustible utilizado
 
 
 
-## Conclusiones y.reflexiones
+## Conclusiones y reflexiones
 
 
 
