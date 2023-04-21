@@ -93,12 +93,27 @@ Ahora sí podemos buscar dónde está la clave _info_:
 
 La clave _statuscode_ se usará más adelante.
 
+Ahora modificamos un poco las variables para ver qué resultado obtenemos:
+
+![](sources/2023-04-21-14-05-00.png)
+
+Como vemos tenemos un problema: la respuesta es tan larga que no se puede visualizar en la terminal de VS Code. Tampoco se puede en la terminal del sistema. Entonces, ¿qué hacer? Se nos ocurrió usar un comando para redirigir la salida de texto hacia un archivo, y funcionó mejor de lo que esperabamos:
+
+![](sources/2023-04-21-14-04-03.png)
+
+```
+python3 mapquest_parse-json_1.py > file.json
+```
+
+Como VS Code puede analizar y resaltar la sintaxis de un texto formateado como JSON, con este método ahora podemos visualizar mejor las respuestas.
+
 ### Paso 5. Imprime la URL y verifica el estado de la solicitud JSON
 
-
+![](sources/2023-04-21-14-21-17.png)
 
 ### Paso 6. Prueba los comandos de impresión y estado de URL
 
+![](sources/2023-04-21-14-19-11.png)
 
 
 ### Paso 7. Añade la entrada del usuario para la ubicación inicial y el destino
