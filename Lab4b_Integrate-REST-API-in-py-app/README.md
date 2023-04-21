@@ -118,43 +118,67 @@ Como VS Code puede analizar y resaltar la sintaxis de un texto formateado como J
 
 ### Paso 7. Añade la entrada del usuario para la ubicación inicial y el destino
 
-
+![](sources/2023-04-21-15-05-59.png)
 
 ### Paso 8. Prueba la funcionalidad de entrada del usuario
+Vemos que funciona; pide los parámetros de punto de partida y llegada. Sin embargo, la salida no es muy elegante (Control + D):
 
-
+![](sources/2023-04-21-15-10-09.png)
 
 ### Paso 9. Añade la funcionalidad de salir a la aplicación
 
+Arreglamos esto con una lógica condicional muy sencilla:
 
+![](sources/2023-04-21-15-14-47.png)
 
 ### Paso 10. Prueba la funcionalidad de salir
-
-
+![](sources/2023-04-21-15-17-20.png)
 
 ### Paso 11. Muestra los datos JSON en JSONView
 
+Abrimos la URL en Chromium como hicimos aquí parea usar su herramienta incorporada JSONView:
 
+![](sources/2023-04-21-15-20-40.png)
+
+Pero ahora sabemos que podemos colapsar la información de la clave _route_ presionando el signo menos (-) que lo precede, el cual se convierte en más (+):
+
+![](sources/2023-04-21-15-21-42.png)
 
 ## Parte 5. Mejora la aplicación de direcciones de MapQuest con más características
 
-
-
 ### Paso 1. Muestra la información resumida del viaje
 
-Queremos que incluya duración, distancia y combustible utilizado
+Queremos que incluya **duración, distancia y combustible utilizado.**
+
+Para ello, seleccionamos escojemos las claves que nos interesan e imprimimos sus valores. Modificamos ligeramente las cadenas a imprimir para usar el formato de _f-string_, que a nuestro parecer es más legible.
+
+![](sources/2023-04-21-15-38-39.png)
+
+Todo va bien hasta que llega a la línea 30. Dice que la clave _fuelUsed_ es incorrecta. No encontramos la manera de arreglarlo. Y es el problema parace ser que la API ha cambiado, ya que inspeccionamos las claves de toda la respuesta y no encontramos _fuelUsed_ ni nada parecido. Por ello, optamos por eliminar esa línea de impresión.
+
+![](sources/2023-04-21-15-52-34.png)
+
+Como estamos recibiendo una distancia en el sistema imperial de millas y la API recibe parámetros para cambiar esto, haremos la conversión a kilómetros en el código:
+
+![](sources/2023-04-21-16-16-02.png)
 
 ### Paso 2. Prueba la funcionalidad de análisis y formato
 
-
+![](sources/2023-04-21-16-12-20.png)
 
 ### Paso 3. Inspecciona la lista de maniobras en los datos JSON
 
+En la guía dice que deberíamos encontrar siete maniobras, pero encontramos veinte. Además, la clave _hasFerry_ no está dentro de _maneuvers_, sino que está al mismo nivel líneas más arriba. Todo esto y lo de que no encontramos la clave _fuelUsed_ refuerza la idea de que la API ha sido reestructurada.
 
+![](sources/2023-04-21-16-25-16.png)
+
+Nos interesa la clave _narrative_. Su valor es la indicación de la maniobra.
+
+![](sources/2023-04-21-16-32-34.png)
 
 ### Paso 4. Añade un bucle for para iterar a través de los datos JSON de las maniobras
 
-
+![](sources/2023-04-21-16-37-35.png)
 
 ### Paso 5. Actividad - Prueba la iteración JSON
 
