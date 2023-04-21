@@ -9,3 +9,5 @@
 [Laboratory 3a: Create a Python Unit Test](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab3a_Create-unittest-py)
 
 [Laboratory 3b: Parse Different Data Types with Python](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab3b_Parse-data-py)
+
+[Laboratory 4a: Explore REST APIs with API Simulator and Postman](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab4a_REST-API-Simulator-Postmano)
