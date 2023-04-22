@@ -178,22 +178,50 @@ Nos interesa la clave _narrative_. Su valor es la indicación de la maniobra.
 
 ### Paso 4. Añade un bucle for para iterar a través de los datos JSON de las maniobras
 
-![](sources/2023-04-21-16-37-35.png)
+![](sources/2023-04-21-17-41-40.png)
 
 ### Paso 5. Actividad - Prueba la iteración JSON
 
-
+![](sources/2023-04-21-17-43-30.png)
 
 ### Paso 6. Comprueba si hay una entrada del usuario no válida
 
+Vemos que, si introducimos un destino que no existe o no es alcanzable a través de una ruta por tierra, la API falla y no hemos programado lo que debe hacer el scripet en estos casos:
 
+![](sources/2023-04-21-17-52-04.png)
+
+En el JSONView de Chromium vemos que en la respuesta el _statuscode_ es 402. 
+
+![](sources/2023-04-21-17-52-58.png)
+
+Eso significa que todo lo que programamos dentro del último _if_ no se ejecuta, ya que _statuscode_ en este caso no es 0.
+
+Agregamos entonces las condiciones para manejar las posibles respuestas fallidas.
+
+![](sources/2023-04-21-18-02-59.png)
 
 ## Parte 6. Prueba la funcionalidad completa de la aplicación
 
+Ahora probamos en una sola ejecución dos casos exitosos y tres fallidos.
 
+Washington, D. C. --> Baltimore, Md
+![](sources/2023-04-21-18-05-49.png)
+
+Moscow, Russia --> Beijing, China
+![](sources/2023-04-21-18-11-19.png)
+
+Washington, D. C. --> Beijing, China
+![](sources/2023-04-21-18-12-21.png)
+
+Washington, D. C. --> Bal
+![](sources/2023-04-21-18-13-07.png)
+
+Washington, D. C. --> 
+![](sources/2023-04-21-18-13-39.png)
 
 ## Conclusiones y reflexiones
 
+> Compartimos por aquí [todo el código]().
 
-
+Hemos creado una app en Python que recupera datos JSON de una API Rest de MapQuest llamada _Directions API_. Además, hemos analizado estos datos, hemos seleccionado los que nos importaban y los hemos formateado para potencialmente mostrárselos a un usuario de nuestra app. La experiencia fue definitivamente muy útil e interesante.
 
