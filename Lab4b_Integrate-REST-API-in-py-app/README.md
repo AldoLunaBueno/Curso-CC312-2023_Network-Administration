@@ -25,7 +25,7 @@
 - [Parte 6. Prueba la funcionalidad completa de la aplicación](#parte-6-prueba-la-funcionalidad-completa-de-la-aplicación)
 - [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
-Para este laboratorio seguimos [esta guía en inglés](https://itexamanswers.net/4-9-2-lab-integrate-a-rest-api-in-a-python-application-answers.html).
+> Para este laboratorio seguimos [esta guía en inglés](https://itexamanswers.net/4-9-2-lab-integrate-a-rest-api-in-a-python-application-answers.html).
 
 ## Parte 1. Lanza la VM de DEVASC
 
