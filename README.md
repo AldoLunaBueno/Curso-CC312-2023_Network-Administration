@@ -11,3 +11,5 @@
 [Laboratory 3b: Parse Different Data Types with Python](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab3b_Parse-data-py)
 
 [Laboratory 4a: Explore REST APIs with API Simulator and Postman](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab4a_REST-API-Simulator-Postmano)
+
+[Laboratory 4b: Integrate a REST API in a Python Application](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab4b_Integrate-REST-API-in-py-app)
