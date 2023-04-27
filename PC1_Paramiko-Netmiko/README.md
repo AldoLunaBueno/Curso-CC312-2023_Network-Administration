@@ -2,7 +2,6 @@
 
 - [Parte 1. Usando Paramiko para conexión a dispositivos de red a través de SSH](#parte-1-usando-paramiko-para-conexión-a-dispositivos-de-red-a-través-de-ssh)
   - [Paso 1. Iniciar una sesión SSH con Paramiko](#paso-1-iniciar-una-sesión-ssh-con-paramiko)
-- [CSR1000v VM](#csr1000v-vm)
   - [Paso 2. Ejecución de un comando a través de SSH](#paso-2-ejecución-de-un-comando-a-través-de-ssh)
   - [Paso 3. Leer la salida de un comando ejecutado](#paso-3-leer-la-salida-de-un-comando-ejecutado)
   - [Paso 4. Ejecución de comandos en múltiples dispositivos](#paso-4-ejecución-de-comandos-en-múltiples-dispositivos)
@@ -55,13 +54,13 @@ Ahora sí la conexión SSH al dispositivo always-on usando el script fue exitosa
 
 Alternativamente, probamos este script para conectarnos al mismo dispositivo, pero alojado localmente como una máquina virtual.
 
-## CSR1000v VM
+**Máquina virtual CSR1000v**
 
-Documentamos la instalación de este dispositivo aquí. Cambiamos las credenciales en el script para establecer esta nueva conexión. Todo funciona sin problemas:
+Documentamos la instalación de este dispositivo [aquí](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Annex_CSR1000v-installation). Cambiamos las credenciales en el script para establecer esta nueva conexión. Todo funciona sin problemas:
 
 ![](sources/2023-04-27-11-00-02.png)
 
-Probamos la clase `getpass` que sirve para introducir la contraseña de forma segura, sin que se pueda recuperar en el historial del terminal:
+Probamos la clase `getpass`, que sirve para introducir la contraseña de forma segura. Esto lo logra impidiendo que se pueda recuperar en el historial del terminal:
 
 ![](sources/paramiko-getpass.gif)
 
