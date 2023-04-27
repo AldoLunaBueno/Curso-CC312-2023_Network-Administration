@@ -13,3 +13,5 @@
 [Laboratory 4a: Explore REST APIs with API Simulator and Postman](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab4a_REST-API-Simulator-Postmano)
 
 [Laboratory 4b: Integrate a REST API in a Python Application](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab4b_Integrate-REST-API-in-py-app)
+
+[**Practice 1: Paramiko and Netmiko in network device configuration**](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/PC1_Paramiko-Netmiko)
