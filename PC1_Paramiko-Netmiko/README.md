@@ -23,9 +23,33 @@
 
 ### Paso 1. Iniciar una sesión SSH con Paramiko
 
+https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology
 
+![](sources/2023-04-27-12-08-05.png)
+
+![](sources/2023-04-27-12-18-49.png)
+
+
+
+![](sources/2023-04-27-10-55-13.png)
+
+![](sources/2023-04-27-10-54-42.png)
+
+Puerto 22
+
+![](sources/2023-04-27-10-56-59.png)
+
+Cambiamos las credenciales
+
+![](sources/2023-04-27-11-00-02.png)
+
+getpass
+
+![](sources/paramiko-getpass.gif)
 
 ### Paso 2. Ejecución de un comando a través de SSH
+
+
 
 ### Paso 3. Leer la salida de un comando ejecutado
 
