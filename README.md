@@ -1,5 +1,7 @@
 # CC312 - Network Administration
 
+## Main
+
 [Laboratory 1: Virtual Machine instalation](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab1_VM-instalation)
 
 [Laboratory 2a: Install the Virtual Machine Lab Environment](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab2a_Install-VM-lab-env)
@@ -15,3 +17,8 @@
 [Laboratory 4b: Integrate a REST API in a Python Application](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Lab4b_Integrate-REST-API-in-py-app)
 
 [**Practice 1: Paramiko and Netmiko in network device configuration**](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/PC1_Paramiko-Netmiko)
+
+---
+## Annex
+
+[Install the CSR1000v VM](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Annex_CSR1000v-installation)
