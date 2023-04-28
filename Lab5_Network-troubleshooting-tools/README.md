@@ -28,11 +28,21 @@
 
 ### Paso 2. Observa el estado de todas las interfaces
 
+![](sources/2023-04-28-11-50-29.png)
+
+En la guía nos dan algunas opciones ampliamente utilizadas:
+
+- `add` o `del`: Esta opción permite añadir o eliminar direcciones IP y su máscara de subred (longitud del prefijo).
+- `hw ether`: Se utiliza para cambiar la dirección MAC física. Esto puede ser útil para, por ejemplo, cambiarla a un nombre fácilmente reconocible para que se destaque en los registros para la solución de problemas.
+- `up` y `down`: Estas opciones se utilizan para habilitar y deshabilitar interfaces. Asegúrese de qué interfaz está deshabilitando. Si es la que está utilizando para conectarse remotamente a un dispositivo, ¡se desconectará!
+
 ---
 
 ## Parte 3. Explora la herramienta de solución de problemas de ping
 
 ### Paso 1. Observa las opciones de ping
+
+
 
 ### Paso 2. Haz ping a un host
 
