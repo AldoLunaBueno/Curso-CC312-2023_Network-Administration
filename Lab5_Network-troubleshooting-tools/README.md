@@ -17,7 +17,7 @@
   - [Paso 3. Consulta un dominio mediante un servidor DNS específico](#paso-3-consulta-un-dominio-mediante-un-servidor-dns-específico)
 - [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
-> Para este laboratorio seguimos [esta guía en inglés](https://www.ccna6rs.com/5-6-7-lab-network-troubleshooting-tools-answers/).
+> Para este laboratorio seguimos [esta guía en inglés.](https://www.ccna6rs.com/5-6-7-lab-network-troubleshooting-tools-answers/)
 
 ---
 
@@ -29,7 +29,7 @@
 
 ![](sources/2023-04-28-11-50-29.png)
 
-En la guía nos dan algunas opciones ampliamente utilizadas:
+En la guía nos dan algunas opciones de ifconfig ampliamente utilizadas:
 
 - `add` o `del`: Esta opción permite añadir o eliminar direcciones IP y su máscara de subred (longitud del prefijo).
   - Estructura: `ifconfig <interface> inet6 add <ipv6address>/<prefixlength>`
@@ -55,8 +55,6 @@ En la guía nos dan algunas opciones ampliamente utilizadas:
 ### Paso 2. Haz ping a un host
 
 ![](sources/2023-04-28-14-35-44.png)
-
-
 
 ---
 
