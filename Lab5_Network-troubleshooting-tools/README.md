@@ -17,6 +17,7 @@
   - [Paso 3. Consulta un dominio mediante un servidor DNS específico](#paso-3-consulta-un-dominio-mediante-un-servidor-dns-específico)
 - [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
+> Para este laboratorio seguimos [esta guía en inglés](https://www.ccna6rs.com/5-6-7-lab-network-troubleshooting-tools-answers/).
 
 ---
 
