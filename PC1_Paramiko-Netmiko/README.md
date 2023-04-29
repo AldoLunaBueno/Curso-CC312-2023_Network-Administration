@@ -54,7 +54,7 @@ Ahora sí la conexión SSH al dispositivo always-on usando el script fue exitosa
 
 Alternativamente, probamos este script para conectarnos al mismo dispositivo, pero alojado localmente como una máquina virtual.
 
-**Máquina virtual CSR1000v**
+**Usamos la máquina virtual CSR1000v en vez del servicio sandbox always-on**
 
 Documentamos la instalación de este dispositivo [aquí](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Annex_CSR1000v-installation). Cambiamos las credenciales en el script para establecer esta nueva conexión. Todo funciona sin problemas:
 
@@ -67,10 +67,33 @@ Probamos la clase `getpass`, que sirve para introducir la contraseña de forma s
 ### Paso 2. Ejecución de un comando a través de SSH
 
 
+![](sources/2023-04-28-22-42-18.png)
 
 ### Paso 3. Leer la salida de un comando ejecutado
 
+![](sources/paramiko-backup.txt.gif)
+
 ### Paso 4. Ejecución de comandos en múltiples dispositivos
+
+Aquí aplicamos una recomandación para que ya no salga la excepción del buffer que, si bien no parece afectar los resultados del laboratorio, estorba un poco.
+
+![](sources/2023-04-28-23-16-50.png)
+
+Simplemente agregamos al script esta línea para vaciar el buffer:
+
+```
+del client, stdin, stdout, stderr
+```
+
+Volviendo a este paso, vemos que el comando se ejecutó, ya que obtenemos el mensaje _Executed command on sanbox_one_ y, además, se crea un archivo con la respuesta de este dispositivo. Pero esta respuesta dice que el comando es inválido:
+
+![](sources/2023-04-28-23-26-34.png)
+
+Establecemos la conexión SSH manualmente, y vemos que volvemos a tener el mismo problema:
+
+![](sources/2023-04-28-23-54-40.png)
+
+En esta página reportan el mismo problema. Al parecer, están trabajando en ello actualmente.
 
 ### Paso 5. Ejecución de una secuencia de comandos
 
