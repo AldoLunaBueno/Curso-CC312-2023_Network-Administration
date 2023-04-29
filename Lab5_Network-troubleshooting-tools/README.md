@@ -21,7 +21,7 @@
 
 ---
 
-## Parte 1. Inicia la máquina virtual de DEVASC.
+## Parte 1. Inicia la máquina virtual de DEVASC
 
 ## Parte 2. Explora la herramienta de solución de problemas ifconfig
 
