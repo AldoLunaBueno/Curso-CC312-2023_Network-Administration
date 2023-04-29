@@ -1,4 +1,4 @@
-# Práctica 1: Paramiko y Netmiko, configuración de dispotivos de red <!-- omit in toc -->
+# Práctica 1: Paramiko y Netmiko en la configuración de dispotivos de red <!-- omit in toc -->
 
 - [Parte 1. Usando Paramiko para conexión a dispositivos de red a través de SSH](#parte-1-usando-paramiko-para-conexión-a-dispositivos-de-red-a-través-de-ssh)
   - [Paso 1. Iniciar una sesión SSH con Paramiko](#paso-1-iniciar-una-sesión-ssh-con-paramiko)
@@ -54,7 +54,7 @@ Ahora sí la conexión SSH al dispositivo always-on usando el script fue exitosa
 
 Alternativamente, probamos este script para conectarnos al mismo dispositivo, pero alojado localmente como una máquina virtual.
 
-**Usamos la máquina virtual CSR1000v en vez del servicio sandbox always-on**
+**Usamos nuestra máquina virtual local CSR1000v**
 
 Documentamos la instalación de este dispositivo [aquí](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Annex_CSR1000v-installation). Cambiamos las credenciales en el script para establecer esta nueva conexión. Todo funciona sin problemas:
 
@@ -71,7 +71,7 @@ Probamos la clase `getpass`, que sirve para introducir la contraseña de forma s
 
 ### Paso 3. Leer la salida de un comando ejecutado
 
-![](sources/paramiko-backup.txt.gif)
+![](sources/paramiko-backup.gif)
 
 ### Paso 4. Ejecución de comandos en múltiples dispositivos
 
@@ -94,6 +94,43 @@ Establecemos la conexión SSH manualmente, y vemos que volvemos a tener el probl
 ![](sources/2023-04-28-23-54-40.png)
 
 En [esta página](https://community.cisco.com/t5/devnet-sandbox/no-access-to-sandbox-iosxe-recomm-1-cisco-com/m-p/4800896) reportan este mismo problema. Al parecer, están trabajando en ello actualmente.
+
+Todo indica que no se nos están otorgando los permisos necesarios para ejecutar este comando. Si nos fijamos en el símbolo que aparece encabezando la línea de comandos, vemos que es un mayor que (>), mas no una almohadilla (#). La diferencia es que el (>) está asociado con un acceso más restringido a los comandos que (#). Quizás con el script también se inicia la sesión SSH en este modo restringido, y por eso es que no se puede ejecutar el comando.
+
+Hay un comando llamado `enable` que permite desbloquear estas restricciones, pero necesita una contraseña que no aparece por ninguna parte. Probamos las siguientes, pero ninguna funcionó:
+
+- lastorangerestoreball8876
+- cisco123!
+- Cisco123!
+- cisco12345
+- Cisco12345
+- c1isco12345
+- C1isco12345
+
+![](sources/2023-04-29-15-07-39.png)
+
+
+**Usamos nuestra máquina virtual local CSR1000v**
+
+Ahora probamos en nuestro CSR1000v el `show running-config` en el modo restringido (>) y logramos reproducir un mensaje de error bastante parecido:
+
+![](sources/2023-04-29-14-47-49.png)
+
+Pero logramos solucionarlo con el comando `enable`, el cuál no nos pide contraseña como en el Sandbox:
+
+![](sources/paramiko-local-vm.gif)
+
+Lo dejamos en modo restringido como estaba al inicio y vamos a VS Code para agregar las credenciales de esta VM para usarlas en el script.
+
+![](sources/2023-04-29-15-13-37.png)
+
+Corremos el script y vemos que el comando se ejecutó en ambos dispositivos. El Sanbox sigue fallando, pero nuestra VM sí acepta el comando:
+
+![](sources/2023-04-29-15-16-57.png)
+
+Como vemos en el margen derecho de la captura, VS Code muestra en pequeño el contenido de los archivos, y así comprobamos que la salida de este comando es extensa.
+
+Considerando estos resultados, damos por concluido este paso. Además, en los próximos pasos usaremos la VM local sin más preámbulos.
 
 ### Paso 5. Ejecución de una secuencia de comandos
 
