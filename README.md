@@ -18,7 +18,10 @@
 
 [**Practice 1: Paramiko and Netmiko in network device configuration**](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/PC1_Paramiko-Netmiko)
 
+[Laboratory 5: Networking Troubleshooting Tools](/Lab5_Network-troubleshooting-tools)
+
 ---
 ## Annex
 
 [Install the CSR1000v VM](https://github.com/AldoLunaBueno/Curso-CC312-2023_Network-Administration/tree/main/Annex_CSR1000v-installation)
+
