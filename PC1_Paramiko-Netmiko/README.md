@@ -130,9 +130,18 @@ Corremos el script y vemos que el comando se ejecutó en ambos dispositivos. El 
 
 Como vemos en el margen derecho de la captura, VS Code muestra en pequeño el contenido de los archivos, y así comprobamos que la salida de este comando es extensa.
 
-Considerando estos resultados, damos por concluido este paso. Además, en los próximos pasos usaremos la VM local sin más preámbulos.
+Considerando estos resultados, damos por concluido este paso. Además, en los próximos pasos usaremos la VM local sin máyores preámbulos.
 
 ### Paso 5. Ejecución de una secuencia de comandos
+
+![](sources/2023-04-29-17-42-21.png)
+
+El problema es la segunda sde estas líneas:
+
+```py
+channel = client.get_transport().open_session()
+shell = client.invoke_shell()
+```
 
 ### Paso 6. Usar claves públicas/privadas para la autenticación
 
