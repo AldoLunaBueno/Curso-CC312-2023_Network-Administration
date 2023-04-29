@@ -88,13 +88,30 @@ En la guía nos dan algunas opciones ampliamente utilizadas:
 
 ## Conclusiones y reflexiones
 
+**¿De qué trato este laboratorio?**
 
+Aprendimos lo básico de ifconfig e ip, ping, traceroute y nslookup.
 
+- _ifconfig_ e _ip_ te permiten ver y modificar la configuración de las interfaces de red, así como la dirección IP, la máscara de subred, el estado, etc.
+- _ping_ te permite enviar paquetes ICMP a ukn host y medir el tiempo de respuesta y la pérdida de paquetes para así evaluar la conectividad.
+- _traceroute_ te permite ver la ruta que siguen los paquetes desde tu orgien hasta el destino, mostrando los saltos y los tiempos intermedios.
+- _nslookup_ te permite consultar servidores DNS para obtener informacón sobre nombres de dominio, dirección IP, registros MX, etc.
+
+Pero hay muchas otras [herramientas](https://blog.invgate.com/es/herramientas-de-diagnostico-de-red) que pueden ayudarnos en el análisis y resolución de problemas de red: nmap, wireshark, netstat, mtr, etc.
+
+**Conceptos clave**
+
+- Interfaz de red: Es el punto de conexión entre dos partes de equipos de red o capas de protocolo. Permite la comunicación entre dispositivos a través de redes privadas o públicas2.
+Protocolo de red: Es un conjunto de reglas y formatos que definen cómo se intercambian los datos entre los dispositivos de una red. Algunos ejemplos son TCP/IP, Ethernet, SLIP, etc3.
+- Dirección IP: Es un identificador único que se asigna a cada interfaz de red para identificarla en la red y permitir el enrutamiento de los paquetes. Puede ser IPv4 o IPv63.
+Enrutamiento: Es el proceso de determinar la mejor ruta para enviar los paquetes desde el origen hasta el destino. Implica el uso de dispositivos como routers, switches y tablas de enrutamiento3.
+- Fallo y rendimiento de la red: Son las medidas que indican el estado y la calidad de la red. El fallo se refiere a cualquier problema que impida el funcionamiento normal de la red, como un cable roto, una configuración incorrecta o un ataque malicioso. El rendimiento se refiere a la capacidad de la red para transmitir los datos con rapidez y eficiencia, como el ancho de banda, la latencia o la pérdida de paquetes4.
+- Herramientas de administración de red: Son las soluciones que ayudan a los administradores de redes a identificar, diagnosticar y resolver los problemas de la red. Algunas herramientas son ping, traceroute, nmap, wireshark, netstat, etc4.
 
 **La administración de redes puede ser impresionante**
 
 Un día, un administrador de redes llamado John recibió una llamada de su jefe diciéndole que la página web de su empresa estaba caída y que no podían acceder a ella ni los clientes ni los empleados. John se conectó rápidamente a su consola de administración de redes y vio que el tráfico entrante a su servidor web era anormalmente alto y provenía de miles de direcciones IP diferentes. Se dio cuenta de que se trataba de un ataque DDoS, en el que los atacantes usan una red de computadoras infectadas (llamadas zombis) para enviar solicitudes falsas al servidor web y saturarlo.
-> Una consola de administración de redes, como Nagios, puede mostrar el tráfico entrante y saliente usando gráficos, tablas o diagramas basados en los datos obtenidos por un protocolo como SNMP. Por ejemplo, puede mostrar el ancho de banda utilizado, el número de paquetes enviados y recibidos, el tipo y la dirección de los paquetes, etc. Estos datos pueden ayudar al administrador a identificar posibles problemas o anomalías en la red, así como a optimizar el rendimiento y la seguridad. 
+> Una consola de administración de redes, como Nagios, puede mostrar el tráfico entrante y saliente usando gráficos, tablas o diagramas. Por ejemplo, puede mostrar el ancho de banda utilizado, el número de paquetes enviados y recibidos, el tipo y la dirección de los paquetes, etc. Estos datos pueden ayudar al administrador a identificar posibles problemas o anomalías en la red, así como a optimizar el rendimiento y la seguridad. 
 > 
 > Pero Nagios no puede mostrar gráficos por sí solo. Pnp es una herramienta que usa RRDtool para almacenar y generar gráficos a partir de los datos de rendimiento que recibe de Nagios. Pnp se integra con la interfaz web de Nagios y permite ver los gráficos de forma fácil y rápida.
 
@@ -103,7 +120,7 @@ John intentó bloquear las direcciones IP de los atacantes usando su firewall, p
 Entonces, John tuvo una idea brillante. Recordó que tenía una vieja computadora portátil en su casa que no usaba desde hacía años. Decidió usarla como un servidor web alternativo y redirigir el tráfico legítimo a ella. Para ello, hizo lo siguiente:
 
 - Conectó la computadora portátil a su router doméstico y le asignó una dirección IP estática. 
-  > Una dirección IP estática es una dirección IP fija que no cambiaba con el tiempo ni con las conexiones.
+  > Una dirección IP estática es una dirección IP fija que no cambia con el tiempo ni con las conexiones.
   
   John usó la dirección IP 192.168.0.100 para su computadora portátil, ya que pertenecía al rango privado de direcciones IP reservadas para redes locales.
 
