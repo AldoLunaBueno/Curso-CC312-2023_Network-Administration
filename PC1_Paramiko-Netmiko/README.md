@@ -89,11 +89,11 @@ Volviendo a este paso, vemos que el comando se ejecutó, ya que obtenemos el men
 
 ![](sources/2023-04-28-23-26-34.png)
 
-Establecemos la conexión SSH manualmente, y vemos que volvemos a tener el mismo problema:
+Establecemos la conexión SSH manualmente, y vemos que volvemos a tener el problema:
 
 ![](sources/2023-04-28-23-54-40.png)
 
-En esta página reportan el mismo problema. Al parecer, están trabajando en ello actualmente.
+En [esta página](https://community.cisco.com/t5/devnet-sandbox/no-access-to-sandbox-iosxe-recomm-1-cisco-com/m-p/4800896) reportan este mismo problema. Al parecer, están trabajando en ello actualmente.
 
 ### Paso 5. Ejecución de una secuencia de comandos
 
