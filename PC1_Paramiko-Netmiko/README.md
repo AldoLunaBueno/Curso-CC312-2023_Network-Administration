@@ -16,6 +16,9 @@
   - [Paso 5. Conexión a varios dispositivos](#paso-5-conexión-a-varios-dispositivos)
 - [Conclusiones](#conclusiones)
 
+Para este laboratorio seguimos [esta guía.](/PC1_Paramiko-Netmiko/sources/PC-1_CC312.pdf)
+
+---
 
 ## Parte 1. Usando Paramiko para conexión a dispositivos de red a través de SSH
 
