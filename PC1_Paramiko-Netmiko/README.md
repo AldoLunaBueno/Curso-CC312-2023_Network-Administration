@@ -136,31 +136,82 @@ Considerando estos resultados, damos por concluido este paso. Además, en los pr
 
 ![](sources/2023-04-29-17-42-21.png)
 
-El problema es la segunda sde estas líneas:
+El mensaje de error dice que hay una escasez de recursos («resourse shortage»), y es producido por la segunda de estas líneas:
 
 ```py
 channel = client.get_transport().open_session()
 shell = client.invoke_shell()
 ```
 
+A pesar de este error, en la VM local la línea de comandos está encabezada por _test>_, así que los comandos fueron ejecutados:
+
+![](sources/2023-04-29-18-39-52.png)
+
+Entonces, el problema biene a la hora de recibir la información. Probamos quitar la primera línea de las dos que citamos del script, y este es el resultado de la ejecución:
+
+![](sources/2023-04-29-18-43-00.png)
+
+Entonces, al parecer lo que falla es el canal. El canal que define la línea que dejamos comentada es un canal de tipo sesión, como dice la documentación:
+
+![](sources/2023-04-29-18-45-17.png)
+
+Con esta línea comentada, posiblemente el canal que se habre por defecto sea otro que si permite recibir los datos del shell. En este punto consideramos que logramos parcialmente el objetivo de este paso.
+
 ### Paso 6. Usar claves públicas/privadas para la autenticación
+
+Vamos a seguir esta guía para crear el archivo con clave ssh que nos piden: https://upcloud.com/resources/tutorials/use-ssh-keys-authentication
+
+Además, documentaremos esto como un anexo.
 
 ### Paso 7. Cargando la configuración SSH local
 
+![](sources/2023-04-29-20-53-51.png)
 
+![](sources/2023-04-29-21-15-23.png)
 
 ## Parte 2. Usando Netmiko para la configuración de dispositivos de red
 
 ### Paso 1. Conexión a un dispositivo de red usando netmiko
 
+![](sources/2023-04-29-21-37-49.png)
+
 ### Paso 2. Enviar comandos usando netmiko
+
+![](sources/2023-04-29-21-43-15.png)
 
 ### Paso 3. Recuperar salidas de comandos como datos estructurados de Python usando netmiko y Genie
 
+
+![](sources/2023-04-29-21-53-17.png)
+
+![](sources/2023-04-29-22-14-27.png)
+
 ### Paso 4. Recopilación de datos con netmiko
+
+![](sources/2023-04-29-21-51-23.png)
 
 ### Paso 5. Conexión a varios dispositivos
 
+![](sources/2023-04-29-22-30-05.png)
+
 ## Conclusiones
 
-¿Qué es DevNet Sandbox? DevNet Sandbox pone la difusión gratuita de la tecnología de Cisco a disposición de desarrolladores e ingenieros proporcionando laboratorios empaquetados que llamamos Sandboxes. Así es, ¡totalmente gratis! Hay dos tipos de Sandboxes, Always-On y Reservation.
+**¿Qué hicimos en este laboratorio?**
+
+En este laboratorio vimos las herramientas de Paramiko y Netmiko para establecer una conexión SSH desde Devasc hacia otra VM llamada CSR100v, que en realidad es un router virtual. A través de esta conexión SSH fuimos capaces de introducir comandos para configurarlo y recoger información de forma automática usando scripts de Python soportados por las herramientas mencionadas.
+
+Tuvimos problemas con el router virtual que Cisco tiene en su nube como servicio sandbox always-on, pero usamos como alternativa un router virtual local del mismo modelo.
+
+**¿Qué aprendimos sobre las herramientas utilizadas?**
+
+**Paramiko** es una implementación en Python del protocolo **SSHv2** que proporciona tanto funcionalidad de cliente como de servidor. Pero **Netmiko**, como vimos, es una versión más amigable de Paramiko que también se basa en Paramiko y que facilita el control de los dispositivos de red mediante scripts de Python. Ambas herramientas nos permiten establecer una conexión SSH desde una máquina virtual hacia otra máquina virtual o un dispositivo físico. **Genie** es una biblioteca de complemento que hace que Netmiko aumente aún más su facilidad de uso y sus posibilidades, ya que te permite analizar y manipular la salida de los comandos de red en forma de datos estructurados. También nos apoyamos en la biblioteca **pptrier** para presentar mejor estos datos.
+
+La máquina virtual CSR100v es un **router virtual** de Cisco que ofrece servicios de red y seguridad en entornos virtuales y en la nube. Al usar estas herramientas, podemos configurar y recoger información del router virtual de forma automática y segura.
+
+**¿Qué hay más allá de estas herramientas básicas?**
+
+Hay otras bibliotecas de Python para la automatización de redes, como NAPALM, Ansible o PyATS.
+
+- NAPALM: Es una librería que simplifica las interacciones automatizadas con dispositivos de red de diferentes sistemas operativos mediante una API unificada. Te permite obtener información y configurar los dispositivos usando métodos comunes para todos los fabricantes.
+- Ansible: Es una plataforma de automatización que usa Python como lenguaje base y que te permite gestionar la configuración, el despliegue y la orquestación de múltiples dispositivos y sistemas mediante un lenguaje declarativo llamado YAML.
+- PyATS: Es un framework de testing de redes que te permite escribir y ejecutar pruebas automatizadas usando Python. Te ayuda a validar el funcionamiento y el rendimiento de tu red mediante scripts personalizados o plantillas predefinidas. Genie también se integra con PyATS y te permite analizar y manipular la salida de los comandos de red en forma de datos estructurados.
