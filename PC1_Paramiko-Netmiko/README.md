@@ -14,7 +14,7 @@
   - [Paso 3. Recuperar salidas de comandos como datos estructurados de Python usando netmiko y Genie](#paso-3-recuperar-salidas-de-comandos-como-datos-estructurados-de-python-usando-netmiko-y-genie)
   - [Paso 4. Recopilación de datos con netmiko](#paso-4-recopilación-de-datos-con-netmiko)
   - [Paso 5. Conexión a varios dispositivos](#paso-5-conexión-a-varios-dispositivos)
-- [Conclusiones](#conclusiones)
+- [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
 Para este laboratorio seguimos [esta guía.](/PC1_Paramiko-Netmiko/sources/PC-1_CC312.pdf)
 
@@ -197,7 +197,7 @@ Además, documentaremos esto como un anexo.
 
 ![](sources/2023-04-29-22-30-05.png)
 
-## Conclusiones
+## Conclusiones y reflexiones
 
 **¿Qué hicimos en este laboratorio?**
 
