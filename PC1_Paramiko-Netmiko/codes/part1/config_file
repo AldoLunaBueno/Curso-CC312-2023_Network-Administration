@@ -1,0 +1,9 @@
+Host CSR*
+  Port 22
+  User cisco
+  StrictHostKeyChecking=no
+  UserKnownHostsFile=/dev/null
+  KexAlgorithms +diffie-hellman-group-exchange-sha1
+
+Host *
+    KexAlgorithms +diffie-hellman-group-exchange-sha1
