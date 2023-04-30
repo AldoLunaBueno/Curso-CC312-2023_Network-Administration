@@ -215,6 +215,6 @@ La máquina virtual CSR100v es un **router virtual** de Cisco que ofrece servici
 
 Hay otras bibliotecas de Python para la automatización de redes, como NAPALM, Ansible o PyATS.
 
-- NAPALM: Es una librería que simplifica las interacciones automatizadas con dispositivos de red de diferentes sistemas operativos mediante una API unificada. Te permite obtener información y configurar los dispositivos usando métodos comunes para todos los fabricantes.
+- NAPALM: Es una biblioteca que simplifica las interacciones automatizadas con dispositivos de red de diferentes sistemas operativos mediante una API unificada. Te permite obtener información y configurar los dispositivos usando métodos comunes para todos los fabricantes.
 - Ansible: Es una plataforma de automatización que usa Python como lenguaje base y que te permite gestionar la configuración, el despliegue y la orquestación de múltiples dispositivos y sistemas mediante un lenguaje declarativo llamado YAML.
 - PyATS: Es un framework de testing de redes que te permite escribir y ejecutar pruebas automatizadas usando Python. Te ayuda a validar el funcionamiento y el rendimiento de tu red mediante scripts personalizados o plantillas predefinidas. Genie también se integra con PyATS y te permite analizar y manipular la salida de los comandos de red en forma de datos estructurados.
