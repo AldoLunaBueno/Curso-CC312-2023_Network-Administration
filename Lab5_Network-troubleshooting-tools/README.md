@@ -91,21 +91,21 @@ En la guía nos dan algunas opciones de ifconfig ampliamente utilizadas:
 
 Aprendimos lo básico de ifconfig e ip, ping, traceroute y nslookup.
 
-- _ifconfig_ e _ip_ te permiten ver y modificar la configuración de las interfaces de red, así como la dirección IP, la máscara de subred, el estado, etc.
-- _ping_ te permite enviar paquetes ICMP a ukn host y medir el tiempo de respuesta y la pérdida de paquetes para así evaluar la conectividad.
-- _traceroute_ te permite ver la ruta que siguen los paquetes desde tu orgien hasta el destino, mostrando los saltos y los tiempos intermedios.
-- _nslookup_ te permite consultar servidores DNS para obtener informacón sobre nombres de dominio, dirección IP, registros MX, etc.
+- _ifconfig_ e _ip_ nos permiten ver y modificar la configuración de las interfaces de red, así como la dirección IP, la máscara de subred, el estado, etc.
+- _ping_ nos permite enviar paquetes ICMP a ukn host y medir el tiempo de respuesta y la pérdida de paquetes para así evaluar la conectividad.
+- _traceroute_ nos permite ver la ruta que siguen los paquetes desde tu orgien hasta el destino, mostrando los saltos y los tiempos intermedios.
+- _nslookup_ nos permite consultar servidores DNS para obtener informacón sobre nombres de dominio, dirección IP, registros MX, etc.
 
 Pero hay muchas otras [herramientas](https://blog.invgate.com/es/herramientas-de-diagnostico-de-red) que pueden ayudarnos en el análisis y resolución de problemas de red: nmap, wireshark, netstat, mtr, etc.
 
 **Conceptos clave**
 
-- Interfaz de red: Es el punto de conexión entre dos partes de equipos de red o capas de protocolo. Permite la comunicación entre dispositivos a través de redes privadas o públicas2.
-Protocolo de red: Es un conjunto de reglas y formatos que definen cómo se intercambian los datos entre los dispositivos de una red. Algunos ejemplos son TCP/IP, Ethernet, SLIP, etc3.
-- Dirección IP: Es un identificador único que se asigna a cada interfaz de red para identificarla en la red y permitir el enrutamiento de los paquetes. Puede ser IPv4 o IPv63.
-Enrutamiento: Es el proceso de determinar la mejor ruta para enviar los paquetes desde el origen hasta el destino. Implica el uso de dispositivos como routers, switches y tablas de enrutamiento3.
-- Fallo y rendimiento de la red: Son las medidas que indican el estado y la calidad de la red. El fallo se refiere a cualquier problema que impida el funcionamiento normal de la red, como un cable roto, una configuración incorrecta o un ataque malicioso. El rendimiento se refiere a la capacidad de la red para transmitir los datos con rapidez y eficiencia, como el ancho de banda, la latencia o la pérdida de paquetes4.
-- Herramientas de administración de red: Son las soluciones que ayudan a los administradores de redes a identificar, diagnosticar y resolver los problemas de la red. Algunas herramientas son ping, traceroute, nmap, wireshark, netstat, etc4.
+- Interfaz de red: Es el punto de conexión entre dos partes de equipos de red o capas de protocolo. Permite la comunicación entre dispositivos a través de redes privadas o públicas.
+Protocolo de red: Es un conjunto de reglas y formatos que definen cómo se intercambian los datos entre los dispositivos de una red. Algunos ejemplos son TCP/IP, Ethernet, SLIP, etc.
+- Dirección IP: Es un identificador único que se asigna a cada interfaz de red para identificarla en la red y permitir el enrutamiento de los paquetes. Puede ser IPv4 o IPv6.
+Enrutamiento: Es el proceso de determinar la mejor ruta para enviar los paquetes desde el origen hasta el destino. Implica el uso de dispositivos como routers, switches y tablas de enrutamiento.
+- Fallo y rendimiento de la red: Son las medidas que indican el estado y la calidad de la red. El fallo se refiere a cualquier problema que impida el funcionamiento normal de la red, como un cable roto, una configuración incorrecta o un ataque malicioso. El rendimiento se refiere a la capacidad de la red para transmitir los datos con rapidez y eficiencia, como el ancho de banda, la latencia o la pérdida de paquetes.
+- Herramientas de administración de red: Son las soluciones que ayudan a los administradores de redes a identificar, diagnosticar y resolver los problemas de la red. Algunas herramientas son ping, traceroute, nmap, wireshark, netstat, etc.
 
 **La administración de redes puede ser impresionante**
 

@@ -190,6 +190,8 @@ Vemos que el usuario es _cisco_. Coincide con el que estamos usando para nuestro
 
 Pero al ejecutarlo vemos que solo contiene la clave _hostname_ y otra relacionada al algoritmo criptográfico. De ahí que el método `connect()` falle, ya que el diccionario `dev_config` no contiene los parámetros que necesita. No sabemos cómo solucionar este problema.
 
+---
+
 ## Parte 2. Usando Netmiko para la configuración de dispositivos de red
 
 ### Paso 1. Conexión a un dispositivo de red usando Netmiko
@@ -222,6 +224,8 @@ Ahora, lo que podemos hacer es obtener datos específicos de este diccionario an
 
 ![](sources/2023-04-29-22-30-05.png)
 
+---
+
 ## Conclusiones y reflexiones
 
 **¿Qué hicimos en este laboratorio?**
@@ -240,6 +244,6 @@ La máquina virtual CSR100v es un **router virtual** de Cisco que ofrece servici
 
 Hay otras bibliotecas de Python para la automatización de redes, como NAPALM, Ansible o PyATS.
 
-- NAPALM: Es una librería que simplifica las interacciones automatizadas con dispositivos de red de diferentes sistemas operativos mediante una API unificada. Te permite obtener información y configurar los dispositivos usando métodos comunes para todos los fabricantes.
+- NAPALM: Es una biblioteca que simplifica las interacciones automatizadas con dispositivos de red de diferentes sistemas operativos mediante una API unificada. Te permite obtener información y configurar los dispositivos usando métodos comunes para todos los fabricantes.
 - Ansible: Es una plataforma de automatización que usa Python como lenguaje base y que te permite gestionar la configuración, el despliegue y la orquestación de múltiples dispositivos y sistemas mediante un lenguaje declarativo llamado YAML.
 - PyATS: Es un framework de testing de redes que te permite escribir y ejecutar pruebas automatizadas usando Python. Te ayuda a validar el funcionamiento y el rendimiento de tu red mediante scripts personalizados o plantillas predefinidas. Genie también se integra con PyATS y te permite analizar y manipular la salida de los comandos de red en forma de datos estructurados.
