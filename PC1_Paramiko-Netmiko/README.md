@@ -208,7 +208,7 @@ Con este primer archivo comprobamos la facilidad de uso de Netmiko. El manejador
 
 Aquí vamos a recuperar la salida del comando `show interfaces`, que recoge la información de las interfaces de red del dispositivo con el que establecemos la conexión SSH. 
 
-Nuestro router virtual local solo tiene una interfaz de red: _GigabitEthernet1_. Con Netmiko abrimos la conexión SSH y enviamos un comando usando el método `send_command()`. Pero este método es mejor que el de Paramiko, ya que nos da la opción de usar Genie, que nos permite estructurar los datos recogidos. El resultado es un diccionario anidado que organiza muy bien todos los datos. Guardamos este resultado en la variable `out` y lo imprimimos con un método de la biblioteca _pprint_, que formatea la impresión para que salga con identación, por ejemplo. El bucle for solo sirve para imprimir la lista de interfaces inspeccionadas, a modo de resumen.
+Nuestro router virtual local solo tiene una interfaz de red: _GigabitEthernet1_. Con Netmiko abrimos la conexión SSH y enviamos un comando usando el método `send_command()`. Pero este método es mejor que el de Paramiko, ya que nos da la opción de usar Genie, que nos permite estructurar los datos recogidos. El resultado es un diccionario anidado que organiza muy bien todos los datos. Guardamos este resultado en la variable `out` y lo imprimimos con un método de la biblioteca `pprint`, que formatea la impresión para que salga con identación, por ejemplo. El bucle for solo sirve para imprimir la lista de interfaces inspeccionadas, a modo de resumen.
 
 ![](sources/2023-04-29-21-53-17.png)
 
