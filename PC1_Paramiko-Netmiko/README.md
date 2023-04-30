@@ -172,6 +172,8 @@ Además, documentaremos esto como un anexo.
 
 ![](sources/2023-04-29-21-15-23.png)
 
+---
+
 ## Parte 2. Usando Netmiko para la configuración de dispositivos de red
 
 ### Paso 1. Conexión a un dispositivo de red usando netmiko
@@ -196,6 +198,8 @@ Además, documentaremos esto como un anexo.
 ### Paso 5. Conexión a varios dispositivos
 
 ![](sources/2023-04-29-22-30-05.png)
+
+---
 
 ## Conclusiones y reflexiones
 
