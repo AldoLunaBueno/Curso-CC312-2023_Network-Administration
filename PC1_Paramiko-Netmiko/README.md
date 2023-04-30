@@ -9,10 +9,10 @@
   - [Paso 6. Usar claves públicas/privadas para la autenticación](#paso-6-usar-claves-públicasprivadas-para-la-autenticación)
   - [Paso 7. Cargando la configuración SSH local](#paso-7-cargando-la-configuración-ssh-local)
 - [Parte 2. Usando Netmiko para la configuración de dispositivos de red](#parte-2-usando-netmiko-para-la-configuración-de-dispositivos-de-red)
-  - [Paso 1. Conexión a un dispositivo de red usando netmiko](#paso-1-conexión-a-un-dispositivo-de-red-usando-netmiko)
+  - [Paso 1. Conexión a un dispositivo de red usando Netmiko](#paso-1-conexión-a-un-dispositivo-de-red-usando-netmiko)
   - [Paso 2. Enviar comandos usando netmiko](#paso-2-enviar-comandos-usando-netmiko)
-  - [Paso 3. Recuperar salidas de comandos como datos estructurados de Python usando netmiko y Genie](#paso-3-recuperar-salidas-de-comandos-como-datos-estructurados-de-python-usando-netmiko-y-genie)
-  - [Paso 4. Recopilación de datos con netmiko](#paso-4-recopilación-de-datos-con-netmiko)
+  - [Paso 3. Recuperar salidas de comandos como datos estructurados de Python usando Netmiko y Genie](#paso-3-recuperar-salidas-de-comandos-como-datos-estructurados-de-python-usando-netmiko-y-genie)
+  - [Paso 4. Recopilación de datos con Netmiko](#paso-4-recopilación-de-datos-con-netmiko)
   - [Paso 5. Conexión a varios dispositivos](#paso-5-conexión-a-varios-dispositivos)
 - [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
@@ -162,19 +162,39 @@ Con esta línea comentada, posiblemente el canal que se habre por defecto sea ot
 
 ### Paso 6. Usar claves públicas/privadas para la autenticación
 
-Vamos a seguir esta guía para crear el archivo con clave ssh que nos piden: https://upcloud.com/resources/tutorials/use-ssh-keys-authentication
+Seguimos [esta guía](https://upcloud.com/resources/tutorials/use-ssh-keys-authentication) para crear el archivo con clave ssh que nos piden:
 
-Además, documentaremos esto como un anexo.
+![](sources/2023-04-30-12-42-23.png)
+
+En el script escribimos los datos de la ubicación del archivo que contiene la llave privada y la frase para obtener su contenido:
+
+![](sources/2023-04-30-13-53-42.png)
+
+Pero el script no funciona:
+
+![](sources/2023-04-30-13-40-51.png)
+
+Dice que no existe una sesión. No sabemos cómo solucionar el problema.
 
 ### Paso 7. Cargando la configuración SSH local
 
+Aquí también tuvimos un problema que no pudimos solucionar.
+
+Primero inspeccionamos el contenido del archivo de configuración:
+
 ![](sources/2023-04-29-20-53-51.png)
+
+Vemos que el usuario es _cisco_. Coincide con el que estamos usando para nuestro router virtual local. Ahora inspeccionamos el script. Antes de ejecutarlo, en la línea 17 imprimimos el contenido del diccionario `dev_config`. Esto porque queremos ver si realmente aparecen las claves _hostname_, _port_, _user_ y _password_.
 
 ![](sources/2023-04-29-21-15-23.png)
 
+Pero al ejecutarlo vemos que solo contiene la clave _hostname_ y otra relacionada al algoritmo criptográfico. De ahí que el método `connect()` falle, ya que el diccionario `dev_config` no contiene los parámetros que necesita. No sabemos cómo solucionar este problema.
+
 ## Parte 2. Usando Netmiko para la configuración de dispositivos de red
 
-### Paso 1. Conexión a un dispositivo de red usando netmiko
+### Paso 1. Conexión a un dispositivo de red usando Netmiko
+
+Con este primer archivo comprobamos la facilidad de uso de Netmiko. El manejador hace todo más sencillo, ya que no le pasamos parámetros uno a uno: le pasamos un diccionario con esos datos.
 
 ![](sources/2023-04-29-21-37-49.png)
 
@@ -182,14 +202,19 @@ Además, documentaremos esto como un anexo.
 
 ![](sources/2023-04-29-21-43-15.png)
 
-### Paso 3. Recuperar salidas de comandos como datos estructurados de Python usando netmiko y Genie
+### Paso 3. Recuperar salidas de comandos como datos estructurados de Python usando Netmiko y Genie
 
+Aquí vamos a recuperar la salida del comando `show interfaces`, que recoge la información de las interfaces de red del dispositivo con el que establecemos la conexión SSH. 
+
+Nuestro router virtual local solo tiene una interfaz de red: _GigabitEthernet1_. Con Netmiko abrimos la conexión SSH y enviamos un comando usando el método `send_command()`. Pero este método es mejor que el de Paramiko, ya que nos da la opción de usar Genie, que nos permite estructurar los datos recogidos. El resultado es un diccionario anidado que organiza muy bien todos los datos. Guardamos este resultado en la variable `out` y lo imprimimos con un método de la biblioteca _pprint_, que formatea la impresión para que salga con identación, por ejemplo. El bucle for solo sirve para imprimir la lista de interfaces inspeccionadas, a modo de resumen.
 
 ![](sources/2023-04-29-21-53-17.png)
 
+Ahora, lo que podemos hacer es obtener datos específicos de este diccionario anidado, así que probamos buscar la clave _bandwidth_:
+
 ![](sources/2023-04-29-22-14-27.png)
 
-### Paso 4. Recopilación de datos con netmiko
+### Paso 4. Recopilación de datos con Netmiko
 
 ![](sources/2023-04-29-21-51-23.png)
 
