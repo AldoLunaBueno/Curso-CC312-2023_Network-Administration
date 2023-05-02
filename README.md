@@ -16,9 +16,13 @@
 
 [Laboratory 4b: Integrate a REST API in a Python Application](/Lab4b_Integrate-REST-API-in-py-app)
 
+[Laboratory 5: Networking Troubleshooting Tools](/Lab5_Network-troubleshooting-tools)
+
 [**Practice 1: Paramiko and Netmiko in network device configuration**](/PC1_Paramiko-Netmiko)
 
-[Laboratory 5: Networking Troubleshooting Tools](/Lab5_Network-troubleshooting-tools)
+[Laboratory 6a: Build a Sample Web App in a Docker Containe](/Lab6a_Docker)
+
+
 
 ---
 ## Annex
