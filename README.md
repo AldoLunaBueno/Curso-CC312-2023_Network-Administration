@@ -6,7 +6,7 @@
 
 [Laboratory 2a: Install the Virtual Machine Lab Environment](/Lab2a_Install-VM-lab-env)
 
-[Laboratory 2b: Explore Python Development Tools](/Lab2b_Python_dev_tools)
+[Laboratory 2b: Explore Python Development Tools (venv)](/Lab2b_Python_dev_tools)
 
 [Laboratory 3a: Create a Python Unit Test](/Lab3a_Create-unittest-py)
 
