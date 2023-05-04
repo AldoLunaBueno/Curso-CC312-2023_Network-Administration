@@ -12,7 +12,7 @@
   - [Paso 2. Edita los archivos de aplicación de muestra](#paso-2-edita-los-archivos-de-aplicación-de-muestra)
   - [Paso 3. Crea y verificar la aplicación de muestra](#paso-3-crea-y-verificar-la-aplicación-de-muestra)
   - [Paso 4. Envia sus cambios a GitHub](#paso-4-envia-sus-cambios-a-github)
-  - [Parte 4. Descarga y ejecuta la imagen de Jenkins Docke](#parte-4-descarga-y-ejecuta-la-imagen-de-jenkins-docke)
+- [Parte 4. Descarga y ejecuta la imagen de Jenkins Docke](#parte-4-descarga-y-ejecuta-la-imagen-de-jenkins-docke)
   - [Paso 1. Descarga la imagen de Jenkins Docker](#paso-1-descarga-la-imagen-de-jenkins-docker)
   - [Paso 2. Arranca el contenedor de Jenkins Docker](#paso-2-arranca-el-contenedor-de-jenkins-docker)
   - [Paso 3. Verifica que el servidor Jenkins se esté ejecutando](#paso-3-verifica-que-el-servidor-jenkins-se-esté-ejecutando)
@@ -59,7 +59,8 @@
 ### Paso 2. Edita los archivos de aplicación de muestra
 ### Paso 3. Crea y verificar la aplicación de muestra
 ### Paso 4. Envia sus cambios a GitHub
-### Parte 4. Descarga y ejecuta la imagen de Jenkins Docke
+
+## Parte 4. Descarga y ejecuta la imagen de Jenkins Docke
 ### Paso 1. Descarga la imagen de Jenkins Docker
 ### Paso 2. Arranca el contenedor de Jenkins Docker
 ### Paso 3. Verifica que el servidor Jenkins se esté ejecutando
