@@ -20,8 +20,9 @@
 
 [**Practice 1: Paramiko and Netmiko in network device configuration**](/PC1_Paramiko-Netmiko)
 
-[Laboratory 6a: Build a Sample Web App in a Docker Containe](/Lab6a_Docker)
+[Laboratory 6a: Build a Sample Web App in a Docker Container](/Lab6a_Docker)
 
+[Laboratory 6b: Build a CI-CD Pipeline Using Jenkins](/Lab6b_CI-CD-Jenkins)
 
 
 ---
