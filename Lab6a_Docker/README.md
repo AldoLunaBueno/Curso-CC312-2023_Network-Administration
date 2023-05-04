@@ -37,7 +37,7 @@
 - [Parte 6. Construye, ejecuta y verifica el contenedor Docker](#parte-6-construye-ejecuta-y-verifica-el-contenedor-docker)
   - [Paso 1. Ejecuta el script bash](#paso-1-ejecuta-el-script-bash)
   - [Paso 2. Investiga el contenedor Docker en ejecución y la aplicación web](#paso-2-investiga-el-contenedor-docker-en-ejecución-y-la-aplicación-web)
-  - [Paso 3. Paso 3. Accede y explora el contenedor en ejecución](#paso-3-paso-3-accede-y-explora-el-contenedor-en-ejecución)
+  - [Paso 3. Accede y explora el contenedor en ejecución](#paso-3-accede-y-explora-el-contenedor-en-ejecución)
   - [Paso 4. Detén y elimina el contenedor Docker](#paso-4-detén-y-elimina-el-contenedor-docker)
 - [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
@@ -110,25 +110,17 @@ Instalamos Flask
 
 ![](sources/2023-05-02-16-53-13.png)
 
+Los demás pasos se condensan en la captura del paso 7.
+
 ### Paso 2. Abre el archivo sample_app.py 
-
-
 
 ### Paso 3. Añade los comandos para importar métodos de flask 
 
-
-
 ### Paso 4. Crea una instancia de la clase Flask 
-
-
 
 ### Paso 5. Define un método para mostrar la dirección IP del cliente 
 
-
-
 ### Paso 6. Configura la aplicación para que se ejecute localmente 
-
-
 
 ### Paso 7. Guarda y ejecuta tu aplicación web de muestra 
 
@@ -253,7 +245,7 @@ Así quedó:
 
 ### Paso 1. Ejecuta el script bash 
 
-Luego de crear los directorios y archivos dentro de _tempdir_ (esto es casi insteantáneo), el script bash ejecuta los comandos para contruir el contenedor Docker.
+Luego de crear los directorios y archivos dentro de _tempdir_ (esto es casi instantáneo), el script bash ejecuta los comandos para contruir el contenedor Docker.
 
 ![](sources/2023-05-03-16-42-03.png)
 
@@ -265,22 +257,57 @@ Y terminó el paso 7:
 
 ![](sources/2023-05-03-16-45-18.png)
 
-Si leemos con atención, dice que se contruyó exitosamente algo llamado _8dbd6..._ Pensabamos que era el contenedor, pero parece que era la imagen. Luego hay un mensaje de error: _unkown shorthand flag: 'n' in -name. See docker run --help_. Nos faltó un guion delante de la bandera de opción para el nombre. Debe ser por este error trivial que no vemos ningún resultado por parte del comando `docker ps -a`.
+Si leemos con atención, dice que se contruyó exitosamente algo llamado _8dbd6..._ Pensabamos que era el contenedor, pero parece que era la imagen. Luego hay un mensaje de error: _unkown shorthand flag: 'n' in -name. See docker run --help_. Nos faltó un guion delante de la bandera de opción para el nombre. Este error trivial debe de ser la causa de que no se haya creado el contendor, porque no vemos ningún resultado por parte del comando `docker ps -a` más allá de la cabecera de la lista.
 
 Corregido esto, ahora sí genera el contenedor, y además lo hace rapidísimo porque la imagen ya fue contruida en la anterior ejecución:
 
 ![](sources/2023-05-03-17-07-32.png)
 
+Pero hay otro error. El puerto 8080 estaba siendo usado por la conexión que hicimos con el script de Python. Como consecuencia, los puertos no se definieron correctamente. 
+
+Matamos la conexión que habíamos hecho antes...
+
+![](sources/2023-05-03-20-10-58.png)
+
+y ahora sí no hay más problemas:
+
+![](sources/2023-05-03-20-10-20.png)
+
 ### Paso 2. Investiga el contenedor Docker en ejecución y la aplicación web 
 
 ![](sources/2023-05-03-16-50-33.png)
 
-### Paso 3. Paso 3. Accede y explora el contenedor en ejecución
+![](sources/2023-05-03-20-29-50.png)
 
+Comprobamos con el comando `ip addr` que el nuevo contenedor docker tiene abierta una interfaz de red, y observamos que la ip coincide con la que se muestra en el html:
 
+![](sources/2023-05-03-20-36-02.png)
+
+### Paso 3. Accede y explora el contenedor en ejecución
+
+Accedemos al contenedor y especificamos al final del comando que queremos interactuar con el sistema usando shell bash.
+
+![](sources/2023-05-03-20-39-40.png)
+
+Solo para probar, usamos el comando `t 2`, que es un alias que tenemos definido en Devasc. Esto era lo esperado, ya que los contenedores son entornos aislados del sistema que los soporta.
 
 ### Paso 4. Detén y elimina el contenedor Docker
 
-
+![](sources/2023-05-03-20-47-33.png)
 
 ## Conclusiones y reflexiones
+
+> Así quedó [nuestro código](/Lab6a_Docker/codes).
+
+**¿Qué nos llevamos de esta experiencia?**
+
+- Hemos aprendido a usar Flask, un framework para crear aplicaciones web que ha demostrado ser fácil de usar y además muy ligero.
+- Hemos aprendido a usar Docker para contener una aplicación web y facilitar su implementación y ejecución.
+
+**¿Qué posibilidades nos abre esta experiencia?**
+
+- Podemos usar Docker para desplegar aplicaciones web en diferentes entornos y plataformas, lo que apoya la portabilidad y escalabilidad de nuestras aplicaciones.
+- Podemos explorar otros frameworks de Python para crear aplicaciones web, como Django, Pyramid, Bottle, etc.
+- Podemos integrar la aplicación web con API y otros servicios.
+
+
