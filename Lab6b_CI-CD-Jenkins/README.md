@@ -31,7 +31,7 @@
   - [Paso 5. Observa la salida de la consola](#paso-5-observa-la-salida-de-la-consola)
   - [Paso 6. Abre otra pestaña del navegador web y verifica que se esté ejecutando la aplicación de muestra](#paso-6-abre-otra-pestaña-del-navegador-web-y-verifica-que-se-esté-ejecutando-la-aplicación-de-muestra)
 - [Parte 7. Usa Jenkins para probar una compilación](#parte-7-usa-jenkins-para-probar-una-compilación)
-  - [Paso 1. Inicia un nuevo trabajo para probar su aplicación de muestra](#paso-1-inicia-un-nuevo-trabajo-para-probar-su-aplicación-de-muestra)
+  - [Paso 1. Inicia un nuevo trabajo para probar tu aplicación de muestra](#paso-1-inicia-un-nuevo-trabajo-para-probar-tu-aplicación-de-muestra)
   - [Paso 2. Configura Jenkins TestAppJob](#paso-2-configura-jenkins-testappjob)
   - [Paso 3. Escribe el script de prueba que debe ejecutarse luego de una compilación estable del BuildAppJob](#paso-3-escribe-el-script-de-prueba-que-debe-ejecutarse-luego-de-una-compilación-estable-del-buildappjob)
   - [Paso 4. Haz que Jenkins ejecute el trabajo BuildAppJob de nuevo](#paso-4-haz-que-jenkins-ejecute-el-trabajo-buildappjob-de-nuevo)
@@ -234,26 +234,96 @@ Le damos a _Start using Jenkins_:
 
 ---
 ## Parte 6. Usa Jenkins para ejecutar una compilación de su aplicación
+
 ### Paso 1. Crea un nuevo trabajo
+
+![](sources/2023-05-05-20-38-56.png)
+
 ### Paso 2. Configura el Jenkins BuildAppJob
+
+![](sources/2023-05-05-20-46-06.png)
+
+![](sources/2023-05-05-20-47-43.png)
+
+![](sources/2023-05-05-20-48-47.png)
+
+Como era de esperarse, el mensaje de error continúa saliendo. Seguimos las instrucciones que dan en [este foro.](https://stackoverflow.com/questions/68812200/jenkins-github-plugin-using-personal-access-token-required-after-aug-13-20) 
+
+Creamos un token clásico.
+
+![](sources/2023-05-05-21-03-32.png)
+
+![](sources/2023-05-05-21-51-45.png)
+
+Mediante este método no necesitamos especificar credenciales, así que esa parte la dejamos como _None_.
+
+Añadimos un paso para ejecutar el script de bash:
+
+![](sources/2023-05-05-21-57-01.png)
+
+
 ### Paso 3. Que Jenkins compile la aplicación
 ### Paso 4. Accede a los detalles de compilación
+
+![](sources/2023-05-05-22-11-08.png)
+
 ### Paso 5. Observa la salida de la consola
+
+Contruimos la aplicación y obtenemos el resultado esperado:
+
+![](sources/2023-05-05-22-05-17.png)
+
+Sin embargo, el método que usamos para la autenticación no parece muy seguro. Líneas más arriba se expone en color azul el token clásico que usamos:
+
+![](sources/2023-05-05-22-04-45.png)
+
+Por obvias razones solo mostramos una parte de este. Quizás una mejor forma sería usar una conexión SSH. La forma de hacer esto la dejamos para un futuro anexo.
+
+
 ### Paso 6. Abre otra pestaña del navegador web y verifica que se esté ejecutando la aplicación de muestra
+
+![](sources/2023-05-05-22-15-00.png)
+
 ---
 ## Parte 7. Usa Jenkins para probar una compilación
-### Paso 1. Inicia un nuevo trabajo para probar su aplicación de muestra
+
+### Paso 1. Inicia un nuevo trabajo para probar tu aplicación de muestra
+
 ### Paso 2. Configura Jenkins TestAppJob
+
+![](sources/2023-05-05-22-34-19.png)
+
 ### Paso 3. Escribe el script de prueba que debe ejecutarse luego de una compilación estable del BuildAppJob
+
+![](sources/2023-05-05-22-36-23.png)
+
 ### Paso 4. Haz que Jenkins ejecute el trabajo BuildAppJob de nuevo
+
 ### Paso 5. Verifica que ambos trabajos hayan finalizado
+
+![](sources/2023-05-05-22-41-29.png)
+
 ---
 ## Parte 8. Crea una tubería o canalización en Jenkins
+
 ### Paso 1. Crea un trabajo de tubería/canalización
+
+![](sources/2023-05-05-22-43-24.png)
+
 ### Paso 2. Configura el trabajo SamplePipeline
+
+![](sources/2023-05-05-22-46-49.png)
+
 ### Paso 3. Ejecuta SamplePipeline
+
+![](sources/2023-05-05-22-49-07.png)
+
 ### Paso 4. Comprueba la salida de SamplePipeline
+
+![](sources/2023-05-05-22-49-46.png)
+
 ---
 ## Conclusiones y reflexiones
 
-> Así quedó [nuestro código](/Lab6b_CI-CD-Jenkins/codes).
+> Aquí dejamos [el código del pipeline](/Lab6b_CI-CD-Jenkins/codes).
+
