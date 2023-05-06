@@ -157,18 +157,81 @@ El repo ya está actualizado:
 
 ### Paso 1. Descarga la imagen de Jenkins Docker
 
-
+![](sources/2023-05-05-18-50-51.png)
 
 ### Paso 2. Arranca el contenedor de Jenkins Docker
+
+Usamos el siguiente comando de una sola línea:
+
+```
+docker run --rm -u root -p 8080:8080 -v jenkins-data:/var/jenkins_home -v $(which docker):/usr/bin/docker -v /var/run/docker.sock:/var/run/docker.sock -v "$HOME":/home --name jenkins_server jenkins/jenkins:lts
+```
+
+![](sources/2023-05-05-19-02-39.png)
+
+Vemos que nos dan una contraseña y la ubicación en donde esta se guarda: _/var/jenkins_home/secrets/initialAdminPassword_
+
+Como en la guía nos dicen que tenemos que volver a ingresar este comando si accidentalmente paramos el servidor, hicimos un alias permanente llamado `jenkins` para este comando en el archivo oculto _.bashrc_:
+
+![](sources/2023-05-05-19-14-31.png)
+
+Guardamos, aplicamos el comando `bash` y ya lo tenemos. Detenemos el servidor para comprobar que funciona:
+
+![](sources/2023-05-05-19-17-54.png)
+
+![](sources/jenkins.gif)
+
 ### Paso 3. Verifica que el servidor Jenkins se esté ejecutando
+
 ### Paso 4. Investiga los niveles de abstracción que se están ejecutando actualmente en el equipo
+
+<pre>
++————————————————————————————————+
+|Your Computer’s Operating System|
+|+——————————————————————————————+|
+||DEVASC VM                     ||
+||+————————————————————————————+||
+|||Docker container            |||
+|||+——————————————————————————+|||
+|||| Jenkins server           ||||
+||||+————————————————————————+||||
+|||||Docker container        |||||
+||||+————————————————————————+||||
+|||+——————————————————————————+|||
+||+————————————————————————————+||
+|+——————————————————————————————+|
++————————————————————————————————+
+</pre>
+
 ---
 ## Parte 5. Configura Jenkins
+
 ### Paso 1. Abre una pestaña del navegador
+
+![](sources/2023-05-05-19-37-56.png)
+
 ### Paso 2. Instala los complementos de Jenkins recomendados
+
+![](sources/2023-05-05-19-39-30.png)
+
 ### Paso 3. Omite la creación de un nuevo usuario administrador
+
+Le damos a _Skip and continue as admin_:
+
+![](sources/2023-05-05-20-02-05.png)
+
 ### Paso 4. Omite la creación de una instancia
+
+Le damos a _Not now_:
+
+![](sources/2023-05-05-20-03-28.png)
+
 ### Paso 5. Empieza a usar Jenkins
+
+Le damos a _Start using Jenkins_:
+
+![](sources/2023-05-05-20-04-15.png)
+
 ---
 ## Parte 6. Usa Jenkins para ejecutar una compilación de su aplicación
 ### Paso 1. Crea un nuevo trabajo
