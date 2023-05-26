@@ -14,6 +14,7 @@
   - [Paso 2. Examina tu playbook de Ansible](#paso-2-examina-tu-playbook-de-ansible)
   - [Paso 3. Ejecuta el playbook de copia de seguridad de Ansible](#paso-3-ejecuta-el-playbook-de-copia-de-seguridad-de-ansible)
   - [Paso 4. Verifica que se haya creado el archivo de copia de seguridad](#paso-4-verifica-que-se-haya-creado-el-archivo-de-copia-de-seguridad)
+  - [Extra](#extra)
 - [Parte 4. Usar Ansible para configurar un dispositivo](#parte-4-usar-ansible-para-configurar-un-dispositivo)
   - [Paso 1. Observa tu archivo de inventario de hosts](#paso-1-observa-tu-archivo-de-inventario-de-hosts)
   - [Paso 2. Crea un nuevo playbook](#paso-2-crea-un-nuevo-playbook)
@@ -119,18 +120,34 @@ Ejecución del comando:
 
 ### Paso 4. Verifica que se haya creado el archivo de copia de seguridad
 
+Vemos que obtenemos el resultado esperado de la ejecución del comando `show running-config` en el router virtual:
+
 ![](sources/2023-05-26-09-18-18.png)
+
+### Extra
+
+En este punto nos podemos preguntar cómo Ansible hizo para saber la información del router si no especificamos el archivo de inventario en el comando `nsible-playbook backup_cisco_router_playbook.yaml`
+
+Esto sucedió porque, por defecto, Ansible verifica si hay algún archivo llamado _ansible.cfg_. Nosotros definimos aquí el archivo de inventario en la línea `inventory=./hosts`. Entonces, si quitamos temporalmente el archivo _ansible.cfg_ del directorio actual, el comando `ansible-playbook backup_cisco_router_playbook.yaml` debería fallar, que es justamente lo que sucede:
+
+![](sources/2023-05-26-09-40-04.png)
+
+Si queremos que el comando se ejecute sin la presencia del archivo ansible.cfg, debemos agregar el archivo de inventario: `ansible-playbook backup_cisco_router_playbook.yaml -i hosts`
+
+Aunque no logramos que funcione:
+
+![](sources/2023-05-26-11-08-22.png)
 
 ---
 ## Parte 4. Usar Ansible para configurar un dispositivo
 
 ### Paso 1. Observa tu archivo de inventario de hosts
 
-
+![](sources/2023-05-26-11-11-41.png)
 
 ### Paso 2. Crea un nuevo playbook
 
-
+![](sources/2023-05-26-14-23-04.png)
 
 ### Paso 3. Examina tu playbook de Ansible
 
@@ -138,11 +155,11 @@ Ejecución del comando:
 
 ### Paso 4. Ejecuta el playbook de Ansible para configurar el direccionamiento IPv6 en CSR1000v
 
-
+![](sources/2023-05-26-14-23-54.png)
 
 ### Paso 5. Verifica que se haya creado el archivo de la salida
 
-
+![](sources/2023-05-26-14-24-23.png)
 
 ---
 ## Conclusiones y reflexiones
