@@ -28,6 +28,12 @@
 ---
 ## Parte 1. Inicia la VM DEVASC y la VM CSR1000v
 
+Iniciamos la VM Devasc y el router virtual CSR1000v o CSR1kv:
+
+![](sources/2023-05-26-16-33-16.png)
+
+Sober la instalación del router virtual, la documentamos como un anexo [aquí.](/Annex_CSR1000v-installation/)
+
 ## Parte 2. Configura Ansible
 
 ### Paso 1. Abre el directorio de Ansible en VS Code
@@ -38,7 +44,7 @@ En este laboratorio solo usaremos el directorio _ansible-csr1000v_:
 
 ### Paso 2. Edita el archivo de inventario de Ansible
 
-Entramos a CSR1kv e ingresamos el comando para saber qué dirección IP usar:
+Entramos a CSR1kv e ingresamos el comando `show ip inter br` para saber a qué dirección IP conectarnos desde Devasc:
 ![](sources/2023-05-24-20-28-42.png)
 
 Ingresamos esta dirección en el campo _ansible_host_:
