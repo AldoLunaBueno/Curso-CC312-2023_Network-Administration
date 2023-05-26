@@ -8,7 +8,7 @@
   - [Paso 4. Muestra el archivo ansible.cfg predeterminado](#paso-4-muestra-el-archivo-ansiblecfg-predeterminado)
   - [Paso 5. Cambia la ubicación del archivo ansible.cfg](#paso-5-cambia-la-ubicación-del-archivo-ansiblecfg)
   - [Paso 6. Edita el archivo ansible.cfg](#paso-6-edita-el-archivo-ansiblecfg)
-  - [Paso 7. RESUMEN: Sus archivos de configuración de Ansible](#paso-7-resumen-sus-archivos-de-configuración-de-ansible)
+  - [Paso 7. Resumen: tus archivos de configuración de Ansible](#paso-7-resumen-tus-archivos-de-configuración-de-ansible)
 - [Parte 3. Utiliza Ansible para realizar copias de seguridad de una configuración](#parte-3-utiliza-ansible-para-realizar-copias-de-seguridad-de-una-configuración)
   - [Paso 1. Crea tu playbook de Ansible](#paso-1-crea-tu-playbook-de-ansible)
   - [Paso 2. Examina tu playbook de Ansible](#paso-2-examina-tu-playbook-de-ansible)
@@ -31,30 +31,54 @@
 
 ### Paso 1. Abre el directorio de Ansible en VS Code
 
+En este laboratorio solo usaremos el directorio _ansible-csr1000v_:
 
+![](sources/2023-05-24-20-11-58.png)
 
 ### Paso 2. Edita el archivo de inventario de Ansible
 
+Entramos a CSR1kv e ingresamos el comando para saber qué dirección IP usar:
+![](sources/2023-05-24-20-28-42.png)
 
+Ingresamos esta dirección en el campo _ansible_host_:
+![](sources/2023-05-24-20-53-48.png)
 
 ### Paso 3. Muestra la versión de Ansible y la ubicación predeterminada de ansible.cfg
 
-
+![](sources/2023-05-24-20-49-28.png)
 
 ### Paso 4. Muestra el archivo ansible.cfg predeterminado
 
+Usamos este el comando en la terminal: `cat /etc/ansible/ansible.cfg | less`
 
+![](sources/2023-05-25-16-47-36.png)
+![](sources/2023-05-25-16-50-32.png)
+
+Algo conveniente del comando `less` es que se puede buscar en un archivo abierto.
+
+![](sources/2023-05-25-16-58-23.png)
+
+La información que encontramos es la esperada.
+
+Además, inspeccionamos también el archivo 'hosts' de Ansible por defecto:
+
+![](sources/2023-05-25-17-08-08.png)
+
+Aquí podemos documentarnos acerca de la sintaxis que se usa en este tipo de archivos.
 
 ### Paso 5. Cambia la ubicación del archivo ansible.cfg
 
-
+![](sources/2023-05-25-17-12-46.png)
 
 ### Paso 6. Edita el archivo ansible.cfg
 
+![](sources/2023-05-25-23-19-21.png)
 
+### Paso 7. Resumen: tus archivos de configuración de Ansible
 
-### Paso 7. RESUMEN: Sus archivos de configuración de Ansible
-
+Básicamente editamos los archivos _hosts_ y _ansible.cfg_:
+- _hosts_ contiene información para conectarnos con el router virtual.
+- _ansible.cfg_ define el archivo anterior como el inventario que usa Ansible al ser ejecutado en el directorio en el que estamos.
 
 ---
 ## Parte 3. Utiliza Ansible para realizar copias de seguridad de una configuración
