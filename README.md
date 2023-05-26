@@ -24,7 +24,7 @@
 
 [Laboratory 6b: Build a CI-CD Pipeline Using Jenkins](/Lab6b_CI-CD-Jenkins)
 
-[Laboratory 7: ](/Lab7_Ansible)
+[Laboratory 7: Use Ansible to Back Up and Configure a Device](/Lab7_Ansible)
 
 ---
 ## Annex
