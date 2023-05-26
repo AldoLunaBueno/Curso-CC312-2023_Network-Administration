@@ -22,7 +22,7 @@
   - [Paso 5. Verifica que se haya creado el archivo de la salida](#paso-5-verifica-que-se-haya-creado-el-archivo-de-la-salida)
 - [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
-> Para este laboratorio seguimos [esta guía en inglés](http://www.ccna6rs.com/7-4-7-lab-use-ansible-to-back-up-and-configure-a-device-answers/)
+> Para este laboratorio seguimos [esta guía en inglés.](http://www.ccna6rs.com/7-4-7-lab-use-ansible-to-back-up-and-configure-a-device-answers/)
 
 ---
 ## Parte 1. Inicia la VM DEVASC y la VM CSR1000v
@@ -83,20 +83,43 @@ Básicamente editamos los archivos _hosts_ y _ansible.cfg_:
 ---
 ## Parte 3. Utiliza Ansible para realizar copias de seguridad de una configuración
 
+Aquí se nos explica a groso modo qué son las jugadas y las tareas. Entendemos que se puede hacer el paralelísmo de estos conceptos con los de programa y función, que vienen de la programación.
+
+También nos hablan de los objetos. En laboratorios anteriores vimos que los objetos de YAML son muy parecidos a los objetos JSON, e incluso vimos en [este laboratorio](/Lab3b_Parse-data-py) que traducir la información entre estos estándares era muy simple con las bibliotecas _yaml_ y _json_ de Python. En esencia estos objetos son como un diccionario de Python.
+
 ### Paso 1. Crea tu playbook de Ansible
 
-
+![](sources/2023-05-26-09-19-25.png)
 
 ### Paso 2. Examina tu playbook de Ansible
 
+Usamos en la terminal el comando `ansible-doc ios_command` para documentarnos un poquito sobre el módulo _ios_command_.
 
+![](sources/2023-05-26-08-34-22.png)
+
+Encontramos un ejemplo de uso:
+
+![](sources/2023-05-26-08-37-40.png)
+
+Y aprendimos más sobre la salida de una tarea que use este módulo.
+
+![](sources/2023-05-26-08-36-05.png)
+
+Usaremos esta salida en la segunda tarea, en la línea `content: "{{ config.stdout[0] }}"`
 
 ### Paso 3. Ejecuta el playbook de copia de seguridad de Ansible
 
+Verificamos que tenemos acceso al router virtual desde nuestra VM con el comando ping:
 
+![](sources/2023-05-26-09-07-02.png)
+
+Ejecución del comando:
+
+![](sources/2023-05-26-09-17-47.png)
 
 ### Paso 4. Verifica que se haya creado el archivo de copia de seguridad
 
+![](sources/2023-05-26-09-18-18.png)
 
 ---
 ## Parte 4. Usar Ansible para configurar un dispositivo
