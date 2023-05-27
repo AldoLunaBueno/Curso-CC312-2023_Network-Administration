@@ -170,3 +170,35 @@ Aunque no logramos que funcione:
 ---
 ## Conclusiones y reflexiones
 
+**¿Qué aprendimos?**
+
+En este laboratorio usamos la herramienta Ansible. Creamos un playbook de Ansible según la sintaxis YAML con intrucciones para recoger información de un router virtual, y también creamos otro playbook para configurar este router.
+
+Entonces, de este laboratorio nos quedamos con tres cosas esenciales:
+
+- Aprendimos a automatizar el recojo y configuración de informacióń de un dispositivo de red usando Ansible y YAML.
+- Adquirimos algunos conocimientos sobre la sintaxis de YAML, así como los módulos y los playbooks de Ansible.
+- Entendimos que esta experiencia es una pequeña muestra de lo conveniente que es la automatización de la administración de redes: nos permite ahorrar tiempo y minimizar los errores humanos.
+
+**¿Qué más hay?**
+
+Existen otras herramientas para automatizar la administración de redes:
+
+- Cisco Network Services Orchestrator (Cisco NSO)
+- SolarWinds Network Services Orchestrator
+- ManageEngine OpManager
+- BMC TrueSight Automation for Network
+
+Vamos a ver superficialmente cómo es la primera de esas herramientas comparándola con Ansible.
+
+**Cisco NSO**
+
+Estas son algunas diferencias entre Ansible y Cisco NSO:
+
+- Ansible es una herramienta de código abierto que permite automatizar tareas como aprovisionamiento, configuración, despligue, pruebas y orquestación, mientras que Cisco NSO es un plataforma que permite diseñar, desplegar y gestionar servicios de red usando un solo API transaccional.
+
+- Ansible usa playbooks escritos en YAML para definir los estados deseados de los sistemas, mientras que Cisco NSO usa modelos YANG para abstraer y validar los datos de configuración de servicio y dispositivo.
+
+- Ansible proporciona características como inventario dinámico, módulos reutilizables, roles y plantillas, filtros y pruebas, mientras que Cisco NSO proporciona características como gestión del ciclo de vida del servicio, trasacciones de configuración, gestión de dispositivos, colas de commit y drivers de elementos de red.
+
+Por último, Cisco NSO y Ansible pueden trabajar juntos para proporcionar una solución unificada para la orquestación y automatización de red. Ansible puede usar Cisco NSO como una sola interfaz para todos los dispositivos.
