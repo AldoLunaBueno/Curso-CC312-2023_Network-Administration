@@ -26,6 +26,8 @@
 
 [Laboratory 7: Use Ansible to Back Up and Configure a Device](/Lab7_Ansible)
 
+[Laboratory 8: Use Ansible to Automate Installing a Web Server](/Lab8_Ansible-install-web-server)
+
 ---
 ## Annex
 
