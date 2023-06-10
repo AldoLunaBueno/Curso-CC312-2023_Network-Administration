@@ -24,6 +24,7 @@
 - [Parte 6. Limpieza del laboratorio y más investigación](#parte-6-limpieza-del-laboratorio-y-más-investigación)
   - [Paso 1. Desactiva tu entorno virtual de Python](#paso-1-desactiva-tu-entorno-virtual-de-python)
   - [Paso 2. Explora más casos de uso de pyATS y Genie](#paso-2-explora-más-casos-de-uso-de-pyats-y-genie)
+- [Conclusiones y reflexiones](#conclusiones-y-reflexiones)
 
 > Para este laboratorio seguimos [esta guía en inglés.](https://itexamanswers.net/7-6-3-lab-automated-testing-using-pyats-and-genie-answers.html)
 
@@ -34,36 +35,33 @@
 
 ### Paso 1. Abre una terminal en el DEVASC-LABVM 
 
-
-
 ### Paso 2. Creando un entorno virtual de Python (venv) 
 
-
+![](sources/2023-06-10-17-13-42.png)
 
 ### Paso 3. Revisa tu entorno virtual de Python (venv)
 
-
+![](sources/2023-06-10-17-14-58.png)
 
 ---
 ## Parte 3. Usa la biblioteca de pruebas pyATS 
 
-
-
 ### Paso 1. Instalando pyATS 
 
-
+Instalamos con el comando `pip3 install pyats`.
 
 ### Paso 2. Verificando pyATS 
 
+![](sources/2023-06-10-17-22-58.png)
 
 
 ### Paso 3. Clona y examina los scripts de muestra de pyATS desde GitHub 
 
-
+![](sources/2023-06-10-17-26-43.png)
 
 ### Paso 4. Examina los archivos de script básicos 
 
-
+![](sources/2023-06-10-17-30-19.png)
 
 ### Paso 5. Ejecuta pyATS manualmente para invocar el caso de prueba básico
 
@@ -119,3 +117,6 @@
 
 ### Paso 2. Explora más casos de uso de pyATS y Genie
 
+
+
+## Conclusiones y reflexiones
