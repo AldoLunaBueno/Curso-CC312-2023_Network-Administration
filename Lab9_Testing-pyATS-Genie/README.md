@@ -61,62 +61,111 @@ Instalamos con el comando `pip3 install pyats`.
 
 ### Paso 4. Examina los archivos de script básicos 
 
+Aquí accedemosal contenido del script básico:
+
 ![](sources/2023-06-10-17-30-19.png)
+
+Y aquí inspeccionamos el job básico:
+
+![](sources/2023-06-11-15-55-16.png)
 
 ### Paso 5. Ejecuta pyATS manualmente para invocar el caso de prueba básico
 
+Ejecutamos el job, que a su vez desencadena la ejecución del script básico, con el comando:
 
+```bash
+pyats run job path/to/job
+```
+
+![](sources/2023-06-11-15-59-42.png)
+
+El comando falla porque tiene un error introducido de forma intencional:
+
+![](sources/2023-06-11-18-03-16.png)
 
 ---
 ## Parte 4. Usa Genie para analizar la salida del comando IOS 
 
 ### Paso 1. Crea un archivo YAML de testbed 
 
+![](sources/2023-06-11-20-38-47.png)
 
+![](sources/2023-06-11-20-39-53.png)
 
 ### Paso 2. Usa Genie para analizar la salida del comando show ip interface brief en JSON 
 
+![](sources/2023-06-11-20-42-54.png)
 
+![](sources/2023-06-11-20-46-43.png)
 
 ### Paso 3. Usa Genie para analizar la salida del comando show version en JSON
 
-
+![](sources/2023-06-11-20-52-21.png)
 
 ---
 ## Parte 5. Usa Genie para comparar configuraciones 
 
 ### Paso 1. Agrega una dirección IPv6 a CSR1kv 
 
-
+![](sources/2023-06-11-21-20-39.png)
+![](sources/2023-06-11-21-20-12.png)
 
 ### Paso 2. Usa Genie para verificar la configuración y analizar la salida en JSON 
 
+![](sources/2023-06-11-21-22-44.png)
 
+![](sources/2023-06-11-21-27-49.png)
+
+Inspeccionamos los archivos generados:
+
+![](sources/2023-06-11-21-31-48.png)
+
+![](sources/2023-06-11-21-32-41.png)
 
 ### Paso 3. Modifica la dirección Link-Local IPv6 
 
-
+![](sources/2023-06-11-21-35-10.png)
 
 ### Paso 4. Usa Genie para verificar la configuración y analizar la salida en JSON 
 
+![](sources/2023-06-11-21-47-41.png)
 
+Aquí vemos los archivos que contienen la nueva información de configuración:
+
+![](sources/2023-06-11-21-50-41.png)
+
+![](sources/2023-06-11-21-51-21.png)
 
 ### Paso 5. Usa Genie para comparar la diferencia entre las configuraciones
 
+Esta es una funcionalidad clave de Genie. Usamos el siguiente comando para encontrar las diferencias entre los archivos de configuración de mismo dispositivo tomados en dos momentos distintos:
+
+```bash
+genie diff files-1 files-2
+```
+
+![](sources/2023-06-11-21-59-39.png)
+
+En el resumen que Genie muestra en terminal se informa de la dirección del reporte de diferencias, así que imprimimos en el terminal este archivo así:
+
+![](sources/2023-06-11-21-55-24.png)
 
 
+Vemos que se comparan grupos de datos, encabezando cada línea por un signo que puede ser + o - dependiendo de qué archivo se trate. Como los archivos representan los datos de configuración para un mismo dispositivo, una forma más relevante de verlo es que los signos - representan lo que se quitó y los + representan lo que se añadió.
 
 ---
 ## Parte 6. Limpieza del laboratorio y más investigación 
 
-
-
 ### Paso 1. Desactiva tu entorno virtual de Python 
 
-
+![](sources/2023-06-11-21-56-26.png)
 
 ### Paso 2. Explora más casos de uso de pyATS y Genie
 
 
 
 ## Conclusiones y reflexiones
+
+Hemos aprendido que se puede usar pyATS y Genie para automatizar las pruebas de red, así como comparar las configuraciones de dispositivos de red para analizar los cambios.
+
+La principal ventaja de usar estas herramientas es que permite a los desarrolladores crear software e infraestructura IT más seguros.
