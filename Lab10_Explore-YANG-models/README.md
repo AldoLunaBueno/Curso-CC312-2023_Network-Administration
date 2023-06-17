@@ -68,3 +68,10 @@ Aquí encontramos la hoja _enabled_ que vimos antes.
 ---
 ## Conclusiones y reflexiones
 
+Yang es un lenguaje de modelamiento de datos. Modelar los datos significa, en forma general, representar visualmente los datos. El propósito de un lenguaje de modelamiento de datos es poder tomar un módulo (cualquier entidad que cumpla una función) y analizar y codificar los datos que maneja, las relaciones entre ellos y sus restricciones.
+
+La representación de los datos en Yang puede darse de muchas formas, y una de ellas es la que vimos en este laboratorio: el diagrama de árbol. A través de este diagrama se pudo apreciar los distintos datos que maneja el módulo revisado llamado _ietf-interfaces_, así como la jerarquía que existe entre ellos. Esto constituye las relaciones entre los datos. También notamos que este diagrama incluía tipos de datos para cada hoja. Estas son las restricciones de estos datos.
+
+Hay otros lenguajes de modelamiento de datos, como el UML (Unified Modeling Language) o el SMI (Structure Managment Information).
+
+Lo que hace especial a Yang es que es usado para operaciones basadas en los protocolos de administración de redes Netconf y Restconf.
