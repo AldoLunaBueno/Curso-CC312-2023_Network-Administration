@@ -32,26 +32,47 @@
 
 ### Paso 1. Inicia las máquinas virtuales
 
-
-
 ### Paso 2. Verifica la conectividad entre las máquinas virtuales
 
+La IP de nuestro router virtual es 192.169.56.105:
 
+![](sources/2023-06-24-10-45-17.png)
+
+Verificamos la conectividad entre Devasc y el router:
+
+![](sources/2023-06-24-10-47-49.png)
 
 ### Paso 3. Verifica la conectividad SSH a la máquina virtual CSR1kv
 
-
+![](sources/2023-06-24-10-51-45.png)
 
 ---
 ## Parte 2. Usa una sesión NETCONF para recopilar información
 
 ### Paso 1. Verifica si NETCONF se está ejecutando en el CSR1kv
 
+![](sources/2023-06-24-10-59-36.png)
 
+Si Netconf no estuviera corriento en el router, podríamos hacer un cambio en la configuración global:
+
+```
+CSR1kv# config t
+CSR1kv (config)# netconf-yang
+```
 
 ### Paso 2. Accede al proceso NETCONF a través de una terminal SSH
 
+Cerramos la anterior sesión ssh y volvemos a entrar, pero esta vez con Netconf como subsistema.
 
+```bash
+ssh cisco@192.168.56.105 -p 830 -s netconf
+```
+
+![](sources/2023-06-24-11-06-40.png)
+
+La última parte de la respuesta recalca que es un mensaje que viene del subsistema de Netconf (]]>]]>) y lo identifica como un saludo (hello).
+
+![](sources/2023-06-24-11-12-08.png)
 
 ### Paso 3. Inicia una sesión NETCONF enviando un mensaje de saludo desde el cliente
 
