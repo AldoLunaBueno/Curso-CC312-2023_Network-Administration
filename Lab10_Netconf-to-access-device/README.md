@@ -74,9 +74,21 @@ La última parte de la respuesta recalca que es un mensaje que viene del subsist
 
 ![](sources/2023-06-24-11-12-08.png)
 
+Ahora vamos al termina del router y verficamos que la sesión se inició en este dispositivo y fue registrada:
+
+![](sources/2023-06-24-12-58-50.png)
+
 ### Paso 3. Inicia una sesión NETCONF enviando un mensaje de saludo desde el cliente
 
+![](sources/2023-06-24-16-35-02.png)
 
+![](sources/2023-06-24-17-14-18.png)
+
+![](sources/2023-06-24-17-50-11.png)
+
+Después de estos errores aprendimos que mensaje _hello_ por sí solo no hace nada, pero es necesario enviarlo al inicio de la sesión para poder hacer otras operaciones. Este es el resultado esperado:
+
+![](sources/2023-06-24-17-51-55.png)
 
 ### Paso 4. Envía mensajes RPC a un dispositivo IOS XE
 
