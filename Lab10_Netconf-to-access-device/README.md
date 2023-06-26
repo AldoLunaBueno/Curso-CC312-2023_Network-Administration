@@ -82,70 +82,205 @@ Ahora vamos al termina del router y verficamos que la sesión se inició en este
 
 ![](sources/2023-06-24-16-35-02.png)
 
+
+### Paso 4. Envía mensajes RPC a un dispositivo IOS XE
+
 ![](sources/2023-06-24-17-14-18.png)
 
 ![](sources/2023-06-24-17-50-11.png)
 
-Después de estos errores aprendimos que mensaje _hello_ por sí solo no hace nada, pero es necesario enviarlo al inicio de la sesión para poder hacer otras operaciones. Este es el resultado esperado:
+Después de estos errores aprendimos que el mensaje _hello_ por sí solo no hace nada, pero es necesario enviarlo al inicio de la sesión para poder hacer otras operaciones. Aquí obtenemos el resultado esperado:
 
 ![](sources/2023-06-24-17-51-55.png)
 
-### Paso 4. Envía mensajes RPC a un dispositivo IOS XE
+Y aquí formateamos con una extensión de VS Code el resultado XML del router:
 
-
+![](sources/2023-06-25-20-27-19.png)
 
 ### Paso 5. Cierra la sesión NETCONF
 
+Enviamos la petición para cerrar la sesión con el siguiente mensaje XML:
 
+![](sources/2023-06-25-20-37-36.png)
+
+En la terminal del router podemos ver que ya no hay sesiones abiertas:
+
+![](sources/2023-06-25-20-36-26.png)
 
 ---
 ## Parte 3. Usa ncclient para conectarte a NETCONF
 
 ### Paso 1. Verifica que ncclient esté instalado y listo para usar
 
-
+```bash
+pip3 list --format=columns | more
+```
 
 ### Paso 2. Crea un script para usar ncclient para conectarte al servicio NETCONF
 
+Hasta ahora solo hemos ingresado manualmente los mensajes para realizar operaciones. Ahora usaremos Python. Corremos este script:
 
+![](sources/2023-06-25-21-05-04.png)
+
+Y no obtenemos nada en la terminal de Devasc, pero sí en el router:
+
+![](sources/2023-06-25-21-04-38.png)
 
 ### Paso 3. Agrega una función de impresión al script para que se muestren las capacidades NETCONF para ### el CSR1kv
 
-
+![](sources/2023-06-25-21-09-17.png)
 
 ---
 ## Parte 4. Usa ncclient para recuperar la configuración
 
 ### Paso 1. Usa la función get_config() para recuperar la configuración en ejecución de R1
 
-
+![](sources/2023-06-25-21-35-38.png)
 
 ### Paso 2. Usa Python para embellecer el XML.
 
-
+![](sources/2023-06-25-21-35-16.png)
 
 ### Paso 3. Usa un filtro con get_config() para recuperar solo un modelo YANG específico
 
-
+![](sources/2023-06-25-21-39-43.png)
 
 ---
 ## Parte 5. Usa ncclient para configurar un dispositivo
 
 ### Paso 1. Usa ncclient para editar el nombre de host del CSR1kv
 
+Esto es lo que vamos a cambiar:
+
+![](sources/2023-06-25-21-42-18.png)
+
+Usamos este código para editar el nombre:
+
+'''python
+netconf_hostname = """
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+     <hostname>CSR1vk</hostname>
+  </native>
+</config>
+"""
+
+# target: the targeted Netconf datastore to be updated
+# config: the configuration modification that is to be sent
+netconf_reply = m.edit_config(target="running", config=netconf_hostname)
+'''
+
+Así se ve ahora el nombre en la terminal del router:
+
+![](sources/2023-06-25-21-52-44.png)
+
+Y, de la misma forma, restauramos el nombre de vuelta. Así se ve en el router:
+
+![](sources/2023-06-25-21-55-48.png)
 
 
 ### Paso 2. Usa ncclient para crear una nueva interfaz loopback en R1
 
+```python
+netconf_loopback = """
+<config>
+ <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+  <interface>
+   <Loopback>
+    <name>1</name>
+    <description>My first NETCONF loopback</description>
+    <ip>
+     <address>
+      <primary>
+       <address>10.1.1.1</address>
+       <mask>255.255.255.0</mask>
+      </primary>
+     </address>
+    </ip>
+   </Loopback>
+  </interface>
+ </native>
+</config>
+"""
 
+netconf_reply = m.edit_config(target="running", config=netconf_loopback)
+print(xml.dom.minidom.parseString(netconf_reply.xml).toprettyxml())
+```
+
+![](sources/2023-06-25-22-30-44.png)
 
 ### Paso 3. Intenta crear una nueva interfaz loopback con la misma dirección IPv4
 
+```python
+netconf_newloop = """
+<config>
+ <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+  <interface>
+   <Loopback>
+    <name>2</name>
+    <description>My second NETCONF loopback</description>
+    <ip>
+     <address>
+      <primary>
+       <address>10.1.1.1</address>
+       <mask>255.255.255.0</mask>
+      </primary>
+     </address>
+    </ip>
+   </Loopback>
+  </interface>
+ </native>
+</config>
+"""
+netconf_reply = m.edit_config(target="running", config=netconf_newloop)
+```
 
+![](sources/2023-06-25-22-40-50.png)
 
 ---
 ## Parte 6. Desafío: Modifica el programa utilizado en este laboratorio
 
+Ahora vamos a hacer algo nuevo usando las bases que aprendimos. Vamos a eliminar la interfaz Loopback que creamos para el router.
+
+En nuestro primer intento, agregamos el atributo `xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0"` en la etiqueta `<config>`, y el atributo `nc:operation="delete"` en la etiqueta `\<interface\>`. No funciona:
+
+![](sources/2023-06-25-23-25-24.png)
+
+Dice que no podemos eliminar interfaces físicas. El mensaje de error no es muy claro, ya que aquí no hay nada físico. Sin embargo, podemos suponer que quizás estamos tratando de eliminar toda la estructura que sostiene las interfaces. Por eso probamos bajar un nivel.
+
+Colocamos entonces el atributo `nc:operation="delete"` en la etiqueta `\<Loopback\>` que está un nivel más abajo. Este es el código relevante:
+
+```python
+netconf_loopback_delete = """
+<config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+ <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+  <interface>
+   <Loopback nc:operation="delete">
+    <name>1</name>
+    <description>My first NETCONF loopback</description>
+    <ip>
+     <address>
+      <primary>
+       <address>10.1.1.1</address>
+       <mask>255.255.255.0</mask>
+      </primary>
+     </address>
+    </ip>
+   </Loopback>
+  </interface>
+ </native>
+</config>
+"""
+
+netconf_reply = m.edit_config(target="running", config=netconf_loopback_delete)
+print(xml.dom.minidom.parseString(netconf_reply.xml).toprettyxml())
+```
+Y en la terminal del router virtual comprobamos que la operación eliminó como esperabamos la interface de Loopback:
+
+![](sources/2023-06-25-23-26-26.png)
+
 ---
 ## Conclusiones y reflexiones
+
+Aprendimos a usar Netconf para recoger información de los dispositivos de red, así como configurarlos editando sus datos. Además, aprendimos a hacer esto a través de un script de Python, que vimos que facilita esta tarea de administración de dispositivos.
 
