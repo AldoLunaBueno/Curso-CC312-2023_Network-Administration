@@ -1,4 +1,4 @@
-# Laboratorio 12. Uso de Restconf para acceder a un dispositivos IOS XE <!-- omit in toc -->
+# Laboratorio 12. Uso de Restconf para acceder a un dispositivo IOS XE <!-- omit in toc -->
 
 - [Parte 1. Construye la red y verifica la conectividad](#parte-1-construye-la-red-y-verifica-la-conectividad)
   - [Paso 1. Inicia las máquinas virtuales.](#paso-1-inicia-las-máquinas-virtuales)
